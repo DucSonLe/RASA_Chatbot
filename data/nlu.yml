@@ -1,0 +1,151 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - xin chào
+    - chào
+    - ê
+    - này
+    - chào buổi sáng
+    - chào buổi tối
+    - có đó không?
+    - có ai không?
+    - có ai ở đây không?
+    - có đây không?
+    - rảnh không?
+    - hú
+    - em ơi
+    - cho hỏi
+    - cho mình hỏi
+
+- intent: give_name
+  examples: |
+    - [Anh](customer_gender) tên là [Thắng](customer_name)
+    - [Anh](customer_gender) là [Thắng](customer_name)
+    - [Anh](customer_gender) là [Phạm Duy](customer_name)
+    - [Anh](customer_gender) là [Phạm Ngọc Duy](customer_name)
+    - [Anh](customer_gender) là [Trung Trần Anh Quân](customer_name)
+    - [Chị](customer_gender) tên là [Hằng](customer_name)
+    - [Chị](customer_gender) là [Hằng](customer_name)
+    - [Chị](customer_gender) là [Thu Hằng](customer_name)
+    - [Chị](customer_gender) là [Trần Thu Hằng](customer_name)
+    - [Chị](customer_gender) là [Trần Thị Thu Hằng](customer_name)
+    - [Em](customer_gender) tên là [Trang](customer_name)
+    - [Em](customer_gender) là [Trang](customer_name)
+    - [Em](customer_gender) là [Phương Trang](customer_name)
+    - [Em](customer_gender) là [Lê Phương Trang](customer_name)
+    - [Em](customer_gender) là [Đào Lê Phương Trang](customer_name)
+
+- intent: goodbye
+  examples: |
+    - bye
+    - bye bye
+    - tạm biệt
+    - bai
+    - bye
+    - hẹn gặp lại
+    - nói chuyện sau nhé
+    - tôi sẽ liên hệ lại
+    - gặp lại sau
+    - biến
+
+- intent: affirm
+  examples: |
+    - yes
+    - đúng rồi
+    - đúng vậy
+    - chính xác
+    - vâng
+    - có
+    - đúng
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - không
+    - không phải
+    - không đúng
+    - k
+    - kh
+    - không phải như vậy
+    - sai rồi
+
+- intent: mood_great
+  examples: |
+    - tuyệt vời
+    - tuyệt
+    - tốt
+    - rất tốt
+    - tôi đang rất vui
+    - hôm nay tôi vui
+    - vui
+    - rất vui
+
+- intent: mood_unhappy
+  examples: |
+    - hôm nay thật tồi
+    - tôi buồn
+    - tôi không cảm thấy tốt
+    - rất buồn
+    - tôi rất buồn
+    - buồn
+    - không vui
+    - không tốt
+    - không thật sự tốt
+
+- intent: complain
+  examples: |
+    - dịch vụ quá tệ
+    - dịch vụ tệ
+    - dịch vụ quá kém
+    - dịch vụ kém
+    - tôi không hài lòng
+    - thấy thất vọng quá
+    - thất vọng quá đi
+
+- intent: question
+  examples: |
+    - Cho tôi hỏi về
+    - Tôi muốn biết về
+    - Tôi cần biết về
+
+- intent: bot_challenge
+  examples: |
+    - bạn là ai?
+    - ai vậy?
+    - bạn có phải là Bot không?
+    - bạn có phải là con người không?
+    - tôi đang nói chuyện với 1 con Bot đúng không?
+    - tôi đang nói chuyện với 1 người đúng không?
+
+- intent: praise
+  examples: |
+    - bạn thật vui tính
+    - bạn thật vui
+    - bạn thật hài hước
+    - bạn thật giỏi
+    - cám ơn bạn nhé
+    - cám ơn
+    - thanks
+    - giỏi quá
+    - giỏi quá đi
+    - hay quá
+    - tốt quá
+
+- intent: decry
+  examples: |
+    - quá tệ
+    - ngu ngốc
+    - chả biết gì cả
+    - ngu thật
+    - dở ghê
+    - có thế mà cũng không biết
+    - kém cói
+    - yếu kém
+    - non
+    - chán mày quá

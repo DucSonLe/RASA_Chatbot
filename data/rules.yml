@@ -1,0 +1,27 @@
+version: "3.1"
+
+rules:
+- rule: Nói "Tạm biệt" khi user tạm biệt
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Nói "Tôi là Bot" khi được hỏi về bản thân
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Hỏi lại user khi không rõ câu hỏi
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: Luôn cám ơn khi được khen
+  steps:
+  - intent: praise
+  - action: utter_thanks
+
+- rule: Luôn xin lỗi khi bị chê
+  steps:
+  - intent: decry
+  - action: utter_sorry

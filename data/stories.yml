@@ -1,0 +1,42 @@
+version: "3.1"
+
+stories:
+- story: Chào hỏi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: Chào hỏi vui vẻ
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: Hỏi tên
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: action_save_cust_info
+  - action: utter_greet_with_name
+
+- story: Buồn
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: Phàn nàn
+  steps:
+  - intent: complain
+  - action: utter_sorry_help
+
+- story: Hỏi đáp đơn giản
+  steps:
+  - intent: question
+  - action: utter_answer

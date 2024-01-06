@@ -1,0 +1,92 @@
+version: "3.1"
+
+intents:
+  - greet
+  - give_name
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - praise
+  - decry
+  - complain
+  - question
+  - nlu_fallback
+
+entities:
+  - customer_gender
+  - customer_name
+
+slots:
+  customer_gender:
+    type: text
+    mappings:
+    - type: custom
+  customer_name:
+    type: text
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+  - text: "Xin chào, Tôi có thể giúp gì được cho bạn?"
+  - text: "Chào, Tôi có thể giúp gì được cho bạn?"
+  - text: "Xin chào, bạn cần giúp gì?"
+
+  utter_greet_with_name:
+  - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
+  - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được ạ?"
+  - text: "Xin chào. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
+
+  utter_cheer_up:
+  - text: "Đây là 1 cái gì đó có thể làm bạn vui"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Đây là mẫu truyện vui nè...."
+
+  utter_did_that_help:
+  - text: "Nó có giúp gì được cho bạn không?"
+
+  utter_happy:
+  - text: "Tuyệt vời, tiếp tục như thế nhé!"
+  - text: "Thật tuệt vời"
+
+  utter_goodbye:
+  - text: "Tạm biệt"
+  - text: "Bye"
+  - text: "Hẹn gặp lại"
+
+  utter_iamabot:
+  - text: "Tôi là Bot"
+
+  utter_please_rephrase:
+  - text: "Xin lỗi, tôi không hiểu yêu cầu của bạn"
+  - text: "Xin lỗi, hiện tại tôi không thể hiểu yêu cầu của bạn"
+  - text: "Xin lỗi, bạn có thể nói rõ hơn được không?"
+
+  utter_thanks:
+  - text: "Cám ơn bạn"
+  - text: "Cám ơn bạn nhé"
+  - text: "Cám ơn bạn rất nhiều"
+
+  utter_sorry:
+  - text: "Xin lỗi quý khách"
+  - text: "Xin lỗi bạn nhé"
+  - text: "Xin lỗi vì sự yếu kém của tôi"
+  - text: "Xin lỗi, tôi sẽ cố gắng hơn trong tương lai"
+
+  utter_sorry_help:
+  - text: "Xin lỗi, không biết bạn đang gặp vấn đề gì?"
+  - text: "Bạn có thể cho tôi biết bạn gặp vấn đề gì không?"
+
+  utter_answer:
+  - text: "Xin lỗi, không biết bạn đang gặp vấn đề gì?"
+  - text: "Bạn có thể cho tôi biết bạn gặp vấn đề gì không?"
+
+actions:
+  - action_save_cust_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
