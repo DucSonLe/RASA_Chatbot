@@ -21,6 +21,7 @@ nlu:
     - em ơi
     - cho hỏi
     - cho mình hỏi
+    - /start
 
 - intent: give_name
   examples: |
@@ -114,14 +115,266 @@ nlu:
     - Tôi muốn biết về
     - Tôi cần biết về
 
-- intent: bot_challenge
+- intent: brands_info
   examples: |
-    - bạn là ai?
-    - ai vậy?
-    - bạn có phải là Bot không?
-    - bạn có phải là con người không?
-    - tôi đang nói chuyện với 1 con Bot đúng không?
-    - tôi đang nói chuyện với 1 người đúng không?
+    - Ở đây bán những hãng laptop nào?
+    - Các hãng laptop đang bán
+    - Các hãng laptop đang được bán ở đây
+    - Các hãng laptop nào có sẵn tại cửa hàng này?
+    - Các hãng laptop nào được bán ở đây?
+    - Cửa hàng cung cấp các hãng máy tính từ những thương hiệu nào?
+    - Cửa hàng có những hãng laptop gì?
+    - Cửa hàng có những hãng laptop nào?
+    - Cửa hàng này bán laptop của những thương hiệu gì?
+    - Cửa hàng này bán laptop của những thương hiệu nào?
+    - Cửa hàng này cung cấp các dòng laptop gì?
+    - Cửa hàng này cung cấp các dòng laptop nào?
+    - Cửa hàng có thể cho tôi biết tất cả các nhãn hiệu laptop mà cửa hàng có không?
+    - Cửa hàng này có các sản phẩm máy tính từ những nhãn hiệu nào?
+    - Cho tôi xem tất cả các hãng laptop
+    - Cho tôi xem toàn bộ các hãng laptop
+    - Cho tôi xem danh sách các hãng máy tính có sẵn tại đây?
+    - Có những hãng máy tính nào được bán tại cửa hàng?
+    - Có bao nhiêu hãng laptop đang được bán ở đây?
+    - Có những thương hiệu máy tính nào đang được ưa chuộng ở cửa hàng ?
+    - Tôi có thể mua laptop của những hãng nào tại đây?
+    - Tôi muốn biết ở đây bán các hãng laptop nào?
+    - Những hãng laptop nào phổ biến nhất tại cửa hàng?
+    - Đâu là các hãng máy tính phổ biến mà cửa hàng có?
+
+- intent: demand_laptop_for_working
+  examples: |
+    - Giới thiệu cho tôi những dòng laptop sử dụng trong công việc
+    - Tôi cần tìm một chiếc laptop để làm công việc văn phòng
+    - Có những dòng laptop sử dụng cho công việc văn phòng?
+    - Tôi cần mua một chiếc laptop để sử dụng trong công việc văn phòng
+    - Tôi muốn mua một chiếc laptop để sử dụng trong công việc văn phòng
+    - Tôi đang cần tìm hiểu về các loại laptop phù hợp cho công việc văn phòng
+    - Đề xuất cho tôi một số dòng laptop phù hợp cho công việc văn phòng 
+    - Tôi cần một chiếc laptop đáp ứng được các yêu cầu công việc văn phòng
+    - Tư vấn cho tôi về các dòng laptop dùng cho công việc văn phòng 
+    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng cho công việc văn phòng
+    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp cho công việc văn phòng 
+    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng trong công việc hàng ngày
+    - Giới thiệu cho tôi về các dòng laptop phù hợp cho công việc văn phòng  
+    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các yêu cầu công văn phòng
+    - Tôi đang quan tâm đến các dòng laptop được thiết kế cho công việc văn phòng
+    - Tư vấn cho tôi về các dòng laptop phù hợp cho công việc văn phòng 
+    - Các dòng laptop phù hợp công việc văn phòng
+    - Các dòng laptop dành cho công việc văn phòng
+    - Các dòng laptop sử dụng cho công việc văn phòng
+    - Các dòng laptop phù hợp cho công việc văn phòng
+
+- intent: demand_laptop_for_gaming
+  examples: |
+    - Giới thiệu cho tôi những dòng laptop sử dụng để chơi game
+    - Tôi cần tìm một chiếc laptop để chơi game
+    - Có những dòng laptop phù hợp để chơi game?
+    - Tôi cần mua một chiếc laptop để chơi game
+    - Tôi muốn mua một chiếc laptop để chơi game
+    - Tôi đang cần tìm hiểu về các loại laptop phù hợp để chơi game
+    - Đề xuất cho tôi một số dòng laptop phù hợp để chơi game
+    - Tôi cần một chiếc laptop đáp ứng được các tựa game mới
+    - Tư vấn cho tôi về các dòng laptop dùng để chơi game
+    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng để chơi game
+    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp để chơi game
+    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng để chơi game
+    - Giới thiệu cho tôi về các dòng laptop phù hợp để chơi game
+    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các tựa game mới
+    - Tôi đang quan tâm đến các dòng laptop được thiết kế để chơi game
+    - Tư vấn cho tôi về các dòng laptop phù hợp để chơi game
+    - Các dòng laptop phù hợp cho gaming
+    - Các dòng laptop dành cho gamer
+    - Các dòng laptop sử dụng để chơi game
+    - Các dòng laptop phù hợp để chơi game
+    - Laptop cho sinh viên có thể chơi game
+    - Laptop cho học sinh có thể chơi game
+    - Laptop học sinh, sinh viên để chơi game
+    - Laptop cấu hình mạnh để chơi game
+    - Laptop cấu hình khủng để chơi game
+    - Laptop vừa học vừa chơi game
+
+- intent: demand_laptop_for_studying
+  examples: |
+    - Giới thiệu cho tôi những dòng laptop sử dụng trong học tập
+    - Tôi cần tìm một chiếc laptop để học tập
+    - Có những dòng laptop sử dụng cho việc học tập
+    - Tôi cần mua một chiếc laptop để sử dụng trong học tập
+    - Tôi muốn mua một chiếc laptop để sử dụng trong học tập
+    - Tôi đang cần tìm hiểu về các loại laptop phù hợp cho việc học tập
+    - Đề xuất cho tôi một số dòng laptop phù hợp cho việc học tập
+    - Tôi cần một chiếc laptop đáp ứng được các yêu cầu cho việc học tập
+    - Tư vấn cho tôi về các dòng laptop dùng cho việc học tập
+    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng trong việc học tập
+    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp cho việc học tập
+    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng trong việc học tập
+    - Giới thiệu cho tôi về các dòng laptop phù hợp cho việc học tập
+    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các yêu cầu trong việc học tập
+    - Tôi đang quan tâm đến các dòng laptop được thiết kế cho việc học tập
+    - Tư vấn cho tôi về các dòng laptop phù hợp cho học tập
+    - Các dòng laptop phù hợp để học tập
+    - Các dòng laptop dành cho việc học tập
+    - Các dòng laptop sử dụng cho việc học tập
+    - Các dòng laptop phù hợp cho việc học tập  
+    - Các laptop để học tập
+    - Các laptop dành cho học sinh
+    - Các laptop cho học sinh
+    - Laptop cho học sinh
+    - Laptop cho học sinh để học tập
+    - Laptop cho sinh viên để học tập
+    - Laptop cho học sinh, sinh viên
+    - Laptop cho sinh viên để học tập
+
+- intent: laptop_with_price_under
+  examples: |
+    - Các dòng laptop giá dưới [15 triệu](price_under)
+    - Tư vấn cho tôi về các dòng laptop dưới [100tr](price_under) không?
+    - Cho tôi biết các dòng laptop có giá dưới [20 trieu](price_under) được không?
+    - Có những dòng laptop nào dưới [30 triệu](price_under)?
+    - Tôi đang tìm kiếm laptop giá dưới [100 triệu](price_under)
+    - Có lựa chọn nào cho laptop dưới [50 triệu](price_under) không? 
+    - Tôi muốn mua một laptop với ngân sách dưới [5 tr](price_under)
+    - Tư vấn cho tôi về laptop giá rẻ dưới [10 tr](price_under)
+    - Tôi đang muốn tìm laptop với giá dưới [30 triệu](price_under)
+    - Tôi muốn mua một chiếc laptop với ngân sách tối đa là [29 triệu](price_under)
+    - Những dòng laptop nào dưới [28 triệu](price_under) đáng để mua
+    - Giới thiệu cho tôi một số dòng laptop dưới [27 triệu](price_under)
+    - Gợi ý cho tôi một số dòng laptop có giá dưới [26 triệu](price_under)
+    - Tôi đang cần mua một chiếc laptop với ngân sách dưới [25 triệu](price_under)
+    - Giới thiệu cho tôi các dòng laptop dưới [24 triệu](price_under) đang được ưa dùng
+    - Tôi muốn mua một chiếc laptop mới nhưng ngân sách dưới [23 triệu](price_under)
+    - Cho tôi biết về các dòng laptop dưới [22 triệu](price_under)
+    - Có những dòng laptop nào có giá thấp hơn [21 triệu](price_under) đồng đáng để mua ?
+    - Cho tôi xin một số gợi ý về các dòng laptop có giá dưới [20 triệu](price_under)
+
+- intent: laptop_with_price_above
+  examples: |
+    - Các dòng laptop giá trên [15 triệu](price_under)
+    - Tư vấn cho tôi về các dòng laptop trên [66tr](price_under) không?
+    - Cho tôi biết các dòng laptop có giá trên [55 trieu](price_under) được không?
+    - Có những dòng laptop nào dưới [44 triệu](price_under)?
+    - Tôi đang tìm kiếm laptop giá trên [11 triệu](price_under)
+    - Có lựa chọn nào cho laptop trên [22 triệu](price_under) không? 
+    - Tôi muốn mua một laptop với ngân sách trên [33tr](price_under)
+    - Tư vấn cho tôi về laptop giá rẻ trên [100tr](price_under)
+    - Tôi đang muốn tìm laptop với giá trên [100 triệu](price_under)
+    - Những dòng laptop nào trên [90 triệu](price_under) đáng để mua
+    - Giới thiệu cho tôi một số dòng laptop trên [80 triệu](price_under)
+    - Gợi ý cho tôi một số dòng laptop có giá trên [70 triệu](price_under)
+    - Tôi đang cần mua một chiếc laptop với ngân sách trên [60 triệu](price_under)
+    - Giới thiệu cho tôi các dòng laptop trên [50 triệu](price_under) đang được ưa dùng
+    - Tôi muốn mua một chiếc laptop mới nhưng ngân sách trên [40 triệu](price_under)
+    - Cho tôi biết về các dòng laptop trên [30 triệu](price_under)
+    - Có những dòng laptop nào có giá cao hơn [20 triệu](price_under) đồng đáng để mua ?
+    - Cho tôi xin một số gợi ý về các dòng laptop có giá trên [10 triệu](price_under)    
+
+- intent: warranty_police
+  examples: |
+    - Chính sách bảo hành
+    - Thông tin về Chính sách bảo hành
+    - Cho tôi biết chính sách bảo hành
+    - Cho tôi biết thông tin bảo hành
+    - Cung cấp cho tôi thông tin bảo hành
+    - Laptop X có chính sách bảo hành như thế nào?
+    - Laptop X bảo hành trong bao lâu
+    - Chính sách bảo hành của laptop X có áp dụng cho tất cả các lỗi
+    - Kiểm tra chính sách bảo hành của laptop X
+    - Việc đổi sản phẩm trong chính sách bảo hành của laptop X
+    - Tôi cần phải liên hệ với ai nếu tôi gặp vấn đề về chính sách bảo hành
+    - Chính sách bảo hành trong trường hợp rơi vỡ của laptop X
+    - Cần phải liên hệ với ai nếu tôi gặp vấn đề về chính sách bảo hành của laptop X
+    - Laptop X lỗi phần mềm có bảo hành không?
+    - kiểm tra thời gian bảo hành còn lại của laptop X
+    - Chính sách bảo hành của laptop X có bao gồm đổi trả 
+  
+- intent: promotion
+  examples: |
+    - Đang có những chương trình khuyến mãi nào ở cửa hàng?
+    - Các sản phẩm laptop đang được khuyến mãi
+    - Các ưu đãi khi mua laptop tại cửa hàng
+    - Cửa hàng đang có những chương trình khuyến mãi cho sản phẩm nào?
+    - Có những chương trình khuyến mãi nào tại cửa hàng?
+    - Thông tin chi tiết về các chương trình khuyến mãi
+    - Cửa hàng đang triển khai chương trình khuyến mãi nào trong thời gian này?
+    - Các chương trình khuyến mãi
+    - Hãy cho tôi biết thông tin về các chương trình khuyến mãi tại cửa hàng
+    - Hãy cho tôi biết thông tin về các ưu đãi khi mua hàng
+    - Cung cấp cho tôi thông tin về các ưu đãi khi mua hàng
+    - Cung cấp cho tôi thông tin về các chương trình khuyến mãi khi mua hàng
+    - Các sản phẩm laptop nào đang được giảm giá
+    - Các sản phẩm laptop nào đang có ưu đãi 
+    - Các sản phẩm laptop đang được giảm mạnh
+    
+- intent: laptop_info
+  examples: |
+    - Laptop [Dell Inspiron 15 1234](laptop_name)
+    - Thông tin về Laptop [Dell Inspiron 14 5678](laptop_name)
+    - Cấu hình Laptop [Dell Vostro 14 3430](laptop_name)
+    - Hãy cho tôi biết thông tin về laptop [Dell Vostro 15 7856](laptop_name)
+    - Hãy cho tôi biết thông tin về cấu hình của laptop [Dell XPS 13](laptop_name)
+    - Cung cấp cho tôi thông tin về laptop [Dell XPS 15](laptop_name)
+    - Cung cấp thông tin về card đồ họa của laptop [MSI Modern 14](laptop_name)
+    - Thông tin về CPU của laptop [MSI Modern 15](laptop_name)?
+    - Hãy cho tôi biết thông tin về CPU của laptop [Asus Vivobook 15](laptop_name)
+    - Cung cấp thông tin về CPU của laptop [Asus Vivobook 14](laptop_name)
+    - Thông tin về giá của laptop [Asus Vivobook 15](laptop_name)?
+    - Cung cấp thông tin về giá của laptop [Asus Vivobook 14](laptop_name)
+    - Thông tin về laptop [Acer Nitro 5](laptop_name)?
+    - Hãy cho tôi biết thông tin về laptop [MSI Bravo 15](laptop_name)
+    - Cung cấp thông tin về laptop [MSI Bravo 15](laptop_name)
+    - Cấu hình của laptop [MSI Bravo 15](laptop_name)
+    - Tôi muốn mua laptop [Dell Inspiron 14 1234](laptop_name)
+    - Mua laptop [MSI Modern 14](laptop_name)
+    - Có bán laptop [MSI Modern 15](laptop_name) không?
+    - Ở đây có bán Laptop [Dell Inspiron 15 1234](laptop_name) không?
+    - Tôi muốn mua laptop [MSI GS66](laptop_name)
+    - Mua laptop [Asus Vivobook 15](laptop_name)
+    - Có bán laptop [Acer Nitro 5](laptop_name) không?
+    - Ở đây có bán Laptop [Acer Nitro 5](laptop_name) không?
+
+
+- intent: laptop_info_price
+  examples: |
+    - Giá của laptop [Asus Vivobook 15](laptop_name)
+    - Hãy cho tôi biết thông tin về giá của laptop [Asus Vivobook 14](laptop_name)
+    - Giá laptop [Asus Vivobook 15](laptop_name)
+    - Cho xin giá laptop [MSI GS66](laptop_name)
+    - Cho tôi biết giá của [MSI GS66](laptop_name) là bao nhiêu?
+    - [MSI Modern 14](laptop_name) bao nhiêu tiền
+    - Laptop [MSI Modern 14](laptop_name) bao nhiêu tiền?
+    - Laptop [MSI Modern 15](laptop_name) bán bao nhiêu?
+    - [Acer Nitro 5](laptop_name) bán bao nhiêu?
+    - Tôi muốn biết về giá tiền của [Acer Nitro 5](laptop_name)
+    - Tôi muốn biết giá tiền của Laptop [Dell XPS 15](laptop_name)
+    - Cho tôi biết Laptop [Dell XPS 15](laptop_name) bao nhiêu tiền?
+    - Có thể cho biết giá của Laptop [Dell Vostro 15 7856](laptop_name) không?
+    - Báo giá Laptop [Asus Zenbook 16](laptop_name)
+    - [Asus Zenbook 15](laptop_name) giá bao nhiêu?
+    - Laptop [Dell Inspiron 14 5678](laptop_name) giá bao nhiêu?
+    - [Asus Zenbook 14](laptop_name) giá bán như thế nào?
+    - Laptop [Dell Inspiron 14 5678](laptop_name) giá bán ra làm sao?
+
+- intent: laptop_of_brand
+  examples: |
+    - Cho tôi xem các Laptop của hãng [Dell](brand_name) 
+    - Các Laptop của hãng [Dell](brand_name) 
+    - Hãng [Dell](brand_name) có những laptop nào
+    - Cho tôi xem các Laptop của hãng [MSI](brand_name) 
+    - Các Laptop của hãng [MSI](brand_name) 
+    - Hãng [MSI](brand_name) có những laptop nào
+    - Cho tôi xem các Laptop của hãng [ASUS](brand_name) 
+    - Các Laptop của hãng [ASUS](brand_name) 
+    - Hãng [ASUS](brand_name) có những laptop nào    
+    - Cho tôi xem các Laptop của hãng [Acer](brand_name) 
+    - Các Laptop của hãng [Acer](brand_name) 
+    - Hãng [Acer](brand_name) có những laptop nào  
+    - Cho tôi xem các Laptop của hãng [HP](brand_name) 
+    - Các Laptop của hãng [HP]](brand_name) 
+    - Hãng [HP]](brand_name) có những laptop nào    
+    - Danh sách laptop của hãng [ASUS](brand_name)
+    - Cho tôi xem của hãng [MSI](brand_name)
+    - Cho tôi xem danh sách laptop của hãng [DELL](brand_name)
+    - Cho tôi xem danh sách của hãng (ASUS)(brand_name)
 
 - intent: praise
   examples: |
@@ -149,3 +402,12 @@ nlu:
     - yếu kém
     - non
     - chán mày quá
+
+- intent: bot_challenge
+  examples: |
+    - bạn là ai?
+    - ai vậy?
+    - bạn có phải là Bot không?
+    - bạn có phải là con người không?
+    - tôi đang nói chuyện với 1 con Bot đúng không?
+    - tôi đang nói chuyện với 1 người đúng không?

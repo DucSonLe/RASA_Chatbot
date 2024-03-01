@@ -13,11 +13,28 @@ intents:
   - decry
   - complain
   - question
+  - brands_info
+  - demand_laptop_for_working
+  - demand_laptop_for_gaming
+  - demand_laptop_for_studying
+  - laptop_with_price_under
+  - laptop_with_price_above
+  - warranty_police
+  - promotion
+  - laptop_info
+  - laptop_info_price
+  - laptop_of_brand
   - nlu_fallback
 
 entities:
   - customer_gender
   - customer_name
+  - brand_name
+  - laptop_name
+  - laptop_price
+  - laptop_under
+  - promotion
+  - warranty_police
 
 slots:
   customer_gender:
@@ -28,6 +45,30 @@ slots:
     type: text
     mappings:
     - type: custom
+  brand_name:
+    type: text
+    mappings:
+      - type: custom
+  laptop_name:
+    type: text
+    mappings:
+      - type: custom
+  laptop_price:
+    type: text
+    mappings:
+      - type: custom
+  promotion:
+    type: text
+    mappings:
+      - type: custom
+  warranty_police:
+    type: text
+    mappings:
+      - type: custom
+  laptop_under:
+    type: text
+    mappings:
+      - type: custom
 
 responses:
   utter_greet:
@@ -84,8 +125,56 @@ responses:
   - text: "Xin lỗi, không biết bạn đang gặp vấn đề gì?"
   - text: "Bạn có thể cho tôi biết bạn gặp vấn đề gì không?"
 
+  utter_brand_results:
+    - text: "Đây là danh sách các hãng Laptop bên mình đang kinh doanh: \n {data} \n\nBạn tham khảo qua ạ!"
+
+  utter_give_laptop:
+    - text: "Laptop bạn muốn xem là {laptop_name}"
+
+  utter_laptop_result:
+    - text: "Thông tin Laptop {laptop_name}:\n{data}"
+
+  utter_laptops_brand_result:
+    - text: "Danh sánh laptop của hãng {brand_name}:\n{data}"
+
+  utter_give_laptop_price:
+    - text: "Giá của laptop {laptop_name} là {laptop_price}"
+
+  utter_give_promotion:
+    - text: "Các ưu đãi hiện có {promotion}"
+
+  utter_give_warranty_police:
+    - text: "Chính sách bảo hành {warranty_police}"
+
+  utter_laptop_for_studying:
+    - text: "Danh sách Laptop cho mục đích Học tập:"
+
+  utter_laptop_for_gaming:
+    - text: "Danh sách Laptop cho mục đích Chơi game:"
+
+  utter_laptop_for_working:
+    - text: "Danh sách Laptop cho mục đích Làm việc:"
+
+  utter_not_found:
+    - text: "Xin lỗi, chúng tôi không bán sản phẩm đó!"
+
+  utter_brand_not_found:
+    - text: "Xin lỗi, chúng tôi không bán sản phẩm của hãng đó!"
+    - text: "Tiếc quá! Chúng tôi không bán sản phẩm của hãng đó"
+
 actions:
+  - action_greet
   - action_save_cust_info
+  - action_get_brands_info
+  - action_get_laptop_name
+  - action_get_laptop_price
+  - action_get_promotion
+  - action_get_warranty_police
+  - action_get_laptop_price_under
+  - action_get_laptop_for_studying
+  - action_get_laptop_for_gaming
+  - action_get_laptop_for_working
+  - action_get_laptop_of_brand
 
 session_config:
   session_expiration_time: 60
