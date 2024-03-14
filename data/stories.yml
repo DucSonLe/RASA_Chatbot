@@ -3,120 +3,87 @@ version: "3.1"
 stories:
 - story: Chào hỏi
   steps:
-  - intent: greet
-  - action: action_greet
+    - intent: greet
+    - action: action_greet
 
-- story: Chào hỏi vui vẻ
+- story: Cám ơn
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: affirm
+    - action: utter_thanks
+
+- story: từ chối
+  steps:
+    - intent: deny
+    - action: utter_sorry
 
 - story: Hỏi tên
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: give_name
-  - action: action_save_cust_info
-  - action: utter_greet_with_name
+    - intent: give_name
+    - action: action_save_cust_info
+    - action: utter_greet_with_name
 
 - story: Hỏi Brand
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: brands_info
-  - action: action_get_brands_info
-
-- story: Hỏi Laptop bằng tên
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: laptop_info
-  - action: action_get_laptop_name
-
-- story: Hỏi giá tiền Laptop
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: laptop_info_price
-  - action: action_get_laptop_price
-  - action: utter_give_laptop_price
-
-- story: Hỏi về ưu đãi khuyến mãi
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: promotion
-  - action: action_get_promotion
-  - action: utter_give_promotion
-
-- story: Hỏi về chính sách bảo hành
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: warranty_police
-  - action: action_get_warranty_police
-  - action: utter_give_warranty_police
-
-- story: List Laptop với giá (dưới)
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: laptop_with_price_under
-  - action: action_get_laptop_price_under
-  - action: utter_give_laptop
-
-- story: Gợi ý laptop (Học tập)
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: demand_laptop_for_studying
-  - action: action_get_laptop_for_studying
-  - action: utter_laptop_for_studying
-  - action: utter_give_laptop
-
-- story: Gợi ý laptop (Chơi game)
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: demand_laptop_for_gaming
-  - action: action_get_laptop_for_gaming
-  - action: utter_laptop_for_gaming
-  - action: utter_give_laptop
-
-- story: Gợi ý laptop (Làm việc)
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: demand_laptop_for_working
-  - action: action_get_laptop_for_working
-  - action: utter_laptop_for_working
-  - action: utter_give_laptop
+    - intent: brands_info
+    - action: action_get_brands_info
 
 - story: Danh sách laptop theo hãng
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: laptop_of_brand
-  - action: action_get_laptop_of_brand
+    - intent: laptop_of_brand
+    - action: action_get_laptop_of_brand
 
-- story: Buồn
+- story: Hỏi Laptop
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: laptop_info
+    - action: action_get_laptop_name
+
+- story: Hỏi về ưu đãi khuyến mãi
+  steps:
+    - intent: promotion
+    - action: utter_give_promotion
+
+- story: Hỏi về chính sách bảo hành
+  steps:
+    - intent: warranty_police
+    - action: action_get_warranty_police
+
+- story: List Laptop với giá (dưới)
+  steps:
+    - intent: laptop_with_price_under
+    - action: action_get_laptop_price_under
+    - action: utter_give_laptop
+
+- story: Gợi ý laptop (Học tập)
+  steps:
+    - intent: demand_laptop_for_studying
+    - action: action_get_laptop_for_studying
+
+- story: Gợi ý laptop (Chơi game)
+  steps:
+    - intent: demand_laptop_for_gaming
+    - action: action_get_laptop_for_gaming
+
+- story: Gợi ý laptop (Làm việc)
+  steps:
+    - intent: demand_laptop_for_working
+    - action: action_get_laptop_for_working
 
 - story: Phàn nàn
   steps:
-  - intent: complain
-  - action: utter_sorry_help
+    - intent: complain
+    - action: utter_sorry_help
 
-- story: Hỏi đáp đơn giản
+- story: Phương thức thanh toán
   steps:
-  - intent: question
-  - action: utter_answer
+    - intent: payment_method
+    - action: action_get_payment_method
+
+- story: Phương thức vận chuyển
+  steps:
+    - intent: delivery
+    - action: utter_delivery
+
+- story: Thông tin + địa chỉ
+  steps:
+    - intent: information
+    - action: action_information

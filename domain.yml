@@ -6,13 +6,8 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-  - praise
-  - decry
   - complain
-  - question
   - brands_info
   - demand_laptop_for_working
   - demand_laptop_for_gaming
@@ -24,6 +19,9 @@ intents:
   - laptop_info
   - laptop_info_price
   - laptop_of_brand
+  - payment_method
+  - delivery
+  - information
   - nlu_fallback
 
 entities:
@@ -31,9 +29,9 @@ entities:
   - customer_name
   - brand_name
   - laptop_name
-  - laptop_price
   - laptop_under
-  - promotion
+  - price_under
+  - price_above
   - warranty_police
 
 slots:
@@ -53,10 +51,6 @@ slots:
     type: text
     mappings:
       - type: custom
-  laptop_price:
-    type: text
-    mappings:
-      - type: custom
   promotion:
     type: text
     mappings:
@@ -69,61 +63,61 @@ slots:
     type: text
     mappings:
       - type: custom
+  price_under:
+    type: text
+    mappings:
+      - type: custom
+  price_above:
+    type: text
+    mappings:
+      - type: custom
 
 responses:
   utter_greet:
-  - text: "Xin chào, Tôi có thể giúp gì được cho bạn?"
-  - text: "Chào, Tôi có thể giúp gì được cho bạn?"
-  - text: "Xin chào, bạn cần giúp gì?"
+    - text: "Cảm ơn bạn đã liên hệ với chúng tôi. Nếu bạn có câu hỏi nào thì bạn có thể để lại lời nhắn ngay nhé."
+    - text: "Chào bạn, Tôi là DSL Bot, tôi có thể giúp gì cho bạn."
+    - text: "Xin chào, Tôi có thể giúp gì được cho bạn?"
+    - text: "Tôi là DSL Bot, Tôi có thể giúp gì được cho bạn?"
+    - text: "Xin chào, bạn cần giúp gì?"
 
   utter_greet_with_name:
-  - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
-  - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được ạ?"
-  - text: "Xin chào. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
-
-  utter_cheer_up:
-  - text: "Đây là 1 cái gì đó có thể làm bạn vui"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-  - text: "Đây là mẫu truyện vui nè...."
+    - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
+    - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được ạ?"
+    - text: "Xin chào. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
 
   utter_did_that_help:
-  - text: "Nó có giúp gì được cho bạn không?"
-
-  utter_happy:
-  - text: "Tuyệt vời, tiếp tục như thế nhé!"
-  - text: "Thật tuệt vời"
+    - text: "Nó có giúp gì được cho bạn không?"
 
   utter_goodbye:
-  - text: "Tạm biệt"
-  - text: "Bye"
-  - text: "Hẹn gặp lại"
+    - text: "Tạm biệt"
+    - text: "Bye"
+    - text: "Hẹn gặp lại"
 
   utter_iamabot:
-  - text: "Tôi là Bot"
+    - text: "Tôi là DSL ChatBot"
 
   utter_please_rephrase:
-  - text: "Xin lỗi, tôi không hiểu yêu cầu của bạn"
-  - text: "Xin lỗi, hiện tại tôi không thể hiểu yêu cầu của bạn"
-  - text: "Xin lỗi, bạn có thể nói rõ hơn được không?"
+    - text: "Xin lỗi, tôi không hiểu yêu cầu của bạn"
+    - text: "Xin lỗi, hiện tại tôi không thể hiểu yêu cầu của bạn"
+    - text: "Xin lỗi, bạn có thể nói rõ hơn được không?"
 
   utter_thanks:
-  - text: "Cám ơn bạn"
-  - text: "Cám ơn bạn nhé"
-  - text: "Cám ơn bạn rất nhiều"
+    - text: "Bạn còn vấn đề gì cần tôi giúp không?"
+    - text: "Bạn còn cần tôi giúp gì không?"
+    - text: "Cám ơn ạ!"
 
   utter_sorry:
-  - text: "Xin lỗi quý khách"
-  - text: "Xin lỗi bạn nhé"
-  - text: "Xin lỗi vì sự yếu kém của tôi"
-  - text: "Xin lỗi, tôi sẽ cố gắng hơn trong tương lai"
+    - text: "Xin lỗi quý khách"
+    - text: "Xin lỗi bạn nhé"
+    - text: "Xin lỗi vì sự yếu kém của tôi"
+    - text: "Xin lỗi, tôi sẽ cố gắng hơn trong tương lai"
 
   utter_sorry_help:
-  - text: "Xin lỗi, không biết bạn đang gặp vấn đề gì?"
-  - text: "Bạn có thể cho tôi biết bạn gặp vấn đề gì không?"
+    - text: "Xin lỗi về trãi nghiệm không tốt của bạn"
+    - text: "Chúng tôi thật sự xin lỗi về trãi nghiệm không tốt đó"
 
-  utter_answer:
-  - text: "Xin lỗi, không biết bạn đang gặp vấn đề gì?"
-  - text: "Bạn có thể cho tôi biết bạn gặp vấn đề gì không?"
+  utter_noted_complain:
+  - text: "Bạn có thể nói cho chúng tôi biết về vấn đề bạn đang gặp được không?"
 
   utter_brand_results:
     - text: "Đây là danh sách các hãng Laptop bên mình đang kinh doanh: \n {data} \n\nBạn tham khảo qua ạ!"
@@ -132,28 +126,28 @@ responses:
     - text: "Laptop bạn muốn xem là {laptop_name}"
 
   utter_laptop_result:
-    - text: "Thông tin Laptop {laptop_name}:\n{data}"
+    - text: "Thông tin Laptop:\n{data}"
 
   utter_laptops_brand_result:
     - text: "Danh sánh laptop của hãng {brand_name}:\n{data}"
 
-  utter_give_laptop_price:
-    - text: "Giá của laptop {laptop_name} là {laptop_price}"
-
   utter_give_promotion:
-    - text: "Các ưu đãi hiện có {promotion}"
+    - text: "Xin lỗi, hiện tại cửa hàng đang không có ưu đãi nào"
 
-  utter_give_warranty_police:
-    - text: "Chính sách bảo hành {warranty_police}"
+  utter_warranty_police:
+    - text: "Chính sách bảo hành: \n{data}"
 
   utter_laptop_for_studying:
-    - text: "Danh sách Laptop cho mục đích Học tập:"
+    - text: "Danh sách Laptop cho mục đích Học tập: \n{data}"
 
   utter_laptop_for_gaming:
-    - text: "Danh sách Laptop cho mục đích Chơi game:"
+    - text: "Danh sách Laptop cho mục đích Chơi game: \n{data}"
 
   utter_laptop_for_working:
-    - text: "Danh sách Laptop cho mục đích Làm việc:"
+    - text: "Danh sách Laptop cho mục đích Làm việc: \n{data}"
+
+  utter_payment_result:
+    - text: "Cửa hàng hiện đang chấp nhận các phương thức thanh toán sau: \n{data}"
 
   utter_not_found:
     - text: "Xin lỗi, chúng tôi không bán sản phẩm đó!"
@@ -162,19 +156,27 @@ responses:
     - text: "Xin lỗi, chúng tôi không bán sản phẩm của hãng đó!"
     - text: "Tiếc quá! Chúng tôi không bán sản phẩm của hãng đó"
 
+  utter_delivery:
+    - text: "Bạn có thể nhận máy tại cửa hàng hoặc chúng tôi sẽ giao máy đến tận nơi cho bạn.\nBạn có thể chọn phương thức nhận máy khi xác nhận mua hoặc bạn có thể liên hệ với chúng tôi"
+
+  utter_information:
+    - text: "Thông tin liên hệ: \n{data}\n\nHoặc bạn cũng có thể truy cập website bên dưới để biết thêm thông tin chi tiết\nhttps://www.tdtu.edu.vn/gioi-thieu/lien-he"
+
 actions:
   - action_greet
   - action_save_cust_info
   - action_get_brands_info
   - action_get_laptop_name
-  - action_get_laptop_price
-  - action_get_promotion
   - action_get_warranty_police
   - action_get_laptop_price_under
   - action_get_laptop_for_studying
   - action_get_laptop_for_gaming
   - action_get_laptop_for_working
   - action_get_laptop_of_brand
+  - action_noted_complain
+  - action_get_payment_method
+  - action_information
+  - action_fallback
 
 session_config:
   session_expiration_time: 60
