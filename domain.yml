@@ -9,15 +9,9 @@ intents:
   - bot_challenge
   - complain
   - brands_info
-  - demand_laptop_for_working
-  - demand_laptop_for_gaming
-  - demand_laptop_for_studying
-  - laptop_with_price_under
-  - laptop_with_price_above
   - warranty_police
   - promotion
   - laptop_info
-  - laptop_info_price
   - laptop_of_brand
   - payment_method
   - delivery
@@ -75,18 +69,18 @@ slots:
 responses:
   utter_greet:
     - text: "Cảm ơn bạn đã liên hệ với chúng tôi. Nếu bạn có câu hỏi nào thì bạn có thể để lại lời nhắn ngay nhé."
-    - text: "Chào bạn, Tôi là DSL Bot, tôi có thể giúp gì cho bạn."
     - text: "Xin chào, Tôi có thể giúp gì được cho bạn?"
-    - text: "Tôi là DSL Bot, Tôi có thể giúp gì được cho bạn?"
     - text: "Xin chào, bạn cần giúp gì?"
+    - text: "Chào bạn, tôi có thể giúp gì cho bạn hôm nay?"
+    - text: "Chào, bạn đang cần sự trợ giúp của tôi?"
+    - text: "Chào bạn! Tôi ở đây để trò chuyện hoặc giúp bạn giải quyết vấn đề."
+    - text: "Chào, bạn có câu hỏi hoặc vấn đề cần giải quyết không?"
+    - text: "Xin chào! Tôi là bot hỗ trợ tự động, làm thế nào tôi có thể phục vụ bạn hôm nay?"
 
   utter_greet_with_name:
     - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
     - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được ạ?"
     - text: "Xin chào. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
-
-  utter_did_that_help:
-    - text: "Nó có giúp gì được cho bạn không?"
 
   utter_goodbye:
     - text: "Tạm biệt"
@@ -94,7 +88,7 @@ responses:
     - text: "Hẹn gặp lại"
 
   utter_iamabot:
-    - text: "Tôi là DSL ChatBot"
+    - text: "Tôi là ChatBot"
 
   utter_please_rephrase:
     - text: "Xin lỗi, tôi không hiểu yêu cầu của bạn"
@@ -113,41 +107,25 @@ responses:
     - text: "Xin lỗi, tôi sẽ cố gắng hơn trong tương lai"
 
   utter_sorry_help:
-    - text: "Xin lỗi về trãi nghiệm không tốt của bạn"
-    - text: "Chúng tôi thật sự xin lỗi về trãi nghiệm không tốt đó"
-
-  utter_noted_complain:
-  - text: "Bạn có thể nói cho chúng tôi biết về vấn đề bạn đang gặp được không?"
+    - text: "Chúng tôi xin lỗi về trải nghiệm không hài lòng của bạn với sản phẩm. Chúng tôi cam kết sẽ cải thiện vấn đề này để đảm bảo rằng bạn sẽ nhận được sự hài lòng cao nhất từ sản phẩm của chúng tôi trong tương lai. Xin cảm ơn bạn đã chia sẻ phản hồi của mình và chúng tôi rất tiếc về bất kỳ bất tiện nào đã gây ra.\n\nNếu bạn cần hỗ trợ kĩ thuật, bạn có thể liên hệ với chung tôi qua số điện thoại: 0999.999.999"
 
   utter_brand_results:
     - text: "Đây là danh sách các hãng Laptop bên mình đang kinh doanh: \n {data} \n\nBạn tham khảo qua ạ!"
 
-  utter_give_laptop:
-    - text: "Laptop bạn muốn xem là {laptop_name}"
-
   utter_laptop_result:
-    - text: "Thông tin Laptop:\n{data}"
+    - text: "Đây là thông tin cơ bản của laptop:\n{data}\n\nBạn có thể xem chi tiết ở link sau: https://it.tdtu.edu.vn/khoa-hoc-cong-nghe"
 
   utter_laptops_brand_result:
-    - text: "Danh sánh laptop của hãng {brand_name}:\n{data}"
+    - text: "Dưới đây là danh sách các laptop:\n{data}"
 
   utter_give_promotion:
-    - text: "Xin lỗi, hiện tại cửa hàng đang không có ưu đãi nào"
+    - text: "Xin lỗi bạn nhé, hiện tại cửa hàng đang không có ưu đãi nào"
 
   utter_warranty_police:
     - text: "Chính sách bảo hành: \n{data}"
 
-  utter_laptop_for_studying:
-    - text: "Danh sách Laptop cho mục đích Học tập: \n{data}"
-
-  utter_laptop_for_gaming:
-    - text: "Danh sách Laptop cho mục đích Chơi game: \n{data}"
-
-  utter_laptop_for_working:
-    - text: "Danh sách Laptop cho mục đích Làm việc: \n{data}"
-
   utter_payment_result:
-    - text: "Cửa hàng hiện đang chấp nhận các phương thức thanh toán sau: \n{data}"
+    - text: "Chào bạn! Chúng tôi có nhiều hình thức thanh toán khác nhau để đáp ứng nhu cầu của bạn. Bạn có thể thanh toán bằng thẻ tín dụng, thẻ ghi nợ, chuyển khoản ngân hàng hoặc thậm chí là tiền mặt khi nhận hàng. Hãy chọn phương thức thanh toán phù hợp nhất với bạn và tiến hành mua sắm thả ga!"
 
   utter_not_found:
     - text: "Xin lỗi, chúng tôi không bán sản phẩm đó!"
@@ -168,13 +146,8 @@ actions:
   - action_get_brands_info
   - action_get_laptop_name
   - action_get_warranty_police
-  - action_get_laptop_price_under
-  - action_get_laptop_for_studying
-  - action_get_laptop_for_gaming
-  - action_get_laptop_for_working
   - action_get_laptop_of_brand
   - action_noted_complain
-  - action_get_payment_method
   - action_information
   - action_fallback
 

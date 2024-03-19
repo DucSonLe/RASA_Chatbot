@@ -1,727 +1,822 @@
 version: "3.1"
-
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - xin chào
-    - chào
-    - ê
-    - này
-    - chào buổi sáng
-    - chào buổi tối
-    - có đó không?
-    - có ai không?
-    - có ai ở đây không?
-    - có đây không?
-    - rảnh không?
-    - hú
-    - em ơi
-    - cho hỏi
-    - cho mình hỏi
-    - bạn gì ơi
-    - chào bạn
-    - chào shop
-    - chào bot
-    - Xin chào bot
-    - Xin chào ạ
-    - Tôi cần giúp đỡ
-    - Giúp đỡ tôi
-    - tôi có thắc mắc
-    - Xin giải đáp thắc mắc
-    - Tôi có một thắc mắc là
-    - tôi có vấn đề cần giúp đỡ
-    - tôi cần giúp đỡ
-    - giúp đỡ tôi
-    - help
-    - ai đó giúp tôi với
-    - shop ơi
-    - bot ơi
-    - chào bạn bot
-    - chào bên kia
-    - start
-    - /start
-
-- intent: give_name
-  examples: |
-    - [Anh](customer_gender) tên là [Thắng](customer_name)
-    - [Anh](customer_gender) là [Thắng](customer_name)
-    - [Anh](customer_gender) là [Phạm Duy](customer_name)
-    - [Anh](customer_gender) là [Phạm Ngọc Duy](customer_name)
-    - [Anh](customer_gender) là [Trung Trần Anh Quân](customer_name)
-    - [Chị](customer_gender) tên là [Hằng](customer_name)
-    - [Chị](customer_gender) là [Hằng](customer_name)
-    - [Chị](customer_gender) là [Thu Hằng](customer_name)
-    - [Chị](customer_gender) là [Trần Thu Hằng](customer_name)
-    - [Chị](customer_gender) là [Trần Thị Thu Hằng](customer_name)
-    - [Em](customer_gender) tên là [Trang](customer_name)
-    - [Em](customer_gender) là [Trang](customer_name)
-    - [Em](customer_gender) là [Phương Trang](customer_name)
-    - [Em](customer_gender) là [Lê Phương Trang](customer_name)
-    - [Em](customer_gender) là [Đào Lê Phương Trang](customer_name)
-
-- intent: goodbye
-  examples: |
-    - bye
-    - bye bye
-    - tạm biệt
-    - bai
-    - bye
-    - hẹn gặp lại
-    - nói chuyện sau nhé
-    - tôi sẽ liên hệ lại
-    - gặp lại sau
-    - biến
-    - chào tạm biệt
-    - goodbye
-    - cám ơn và hẹn gặp lại
-    - tôi sẽ liên lạc lại sau
-    - liên lạc sau nhé
-    - gặp lại sau nhé
-    - nói chuyện sau nhé
-    - tạm biệt nhé
-    - tôi sẽ quay lại sau
-    - tôi có việc bận rồi
-    - tôi đang bận
-    - tôi đang không rảnh
-    - kết thúc
-    - kết thúc trò chuyện
-    - tôi không muốn nói chuyện nữa
-    - đừng làm phiền tôi
-    - bạn đừng nói nữa
-
-- intent: affirm
-  examples: |
-    - yes
-    - đúng rồi
-    - đúng vậy
-    - chính xác
-    - vâng
-    - có
-    - đúng
-    - chính xác là như vậy
-    - đúng như vậy rồi đó
-    - đúng rồi đó
-    - dạ
-    - dạ đúng rồi
-    - dạ vâng
-    - vâng đúng rồi
-    - vâng chính xác
-    - ok
-    - đúng đúng đúng
-    - rất đúng
-    - quá đúng
-    - quá chính xác
-    - đúng rồi bạn
-    - đúng rồi bot
-    - đúng rồi em
-    - đúng rồi chị
-    - đúng rồi anh
-    - chính xác đó bạn
-    - chính xác đó
-    - thanks
-    - cám ơn
-    - thank you
-    - thankyou
-    - thank u
-    - thank
-    - cám ơn bạn
-    - cám ơn rất nhiều
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - không
-    - không phải
-    - không đúng
-    - k
-    - kh
-    - không phải như vậy
-    - sai rồi
-    - không phải như vậy đâu
-    - sai rồi đó
-    - không đúng đâu
-    - không được
-    - không đồng ý
-    - không chấp nhận
-
-- intent: complain
-  examples: |
-    - dịch vụ quá tệ
-    - dịch vụ tệ
-    - dịch vụ quá kém
-    - dịch vụ kém
-    - tôi không hài lòng
-    - thấy thất vọng quá
-    - thất vọng quá đi
-    - tôi đang thấy rất thất vọng
-    - tôi thấy thất vọng quá
-    - sản phẩm kém chất lượng
-    - sản phẩm không chất lượng
-    - sản phẩm dỏm
-    - sản phẩm không đúng với mô tả
-    - sản phẩm này không đúng với mô tả
-    - nhân viên không thân thiện
-    - nhân viên không tiếp đón khách
-    - tôi thấy không thích
-    - tôi không thích dịch vụ của shop
-    - tôi không thích dịch vụ ở đây
-    - tôi không thích sản phẩm này
-    - sản phẩm này không tốt
-    - tôi vừa mua laptop thì bị hỏng
-    - tôi vừa mua laptop thì bị hư
-    - máy tính vừa mua thì bị hỏng
-    - máy tính vừa mua thì bị hư
-    - laptop không chất lượng
-    - laptop không tốt
-    - máy tính dỏm
-    - bán máy tính không chất lượng
-    - dịch vụ không tốt
-    - dịch vụ bảo hành quá tệ
-    - dịch vụ bảo hành quá dỏm
-    - dịch vụ bảo hành không thật sự tốt
-    - mua máy tính nhưng không được bảo hành
-    - mua máy tính bị lỗi vặt
-    - tôi đánh giá thấp dịch vụ ở đây
-    - ở đây dịch vụ tệ quá đi
-    - bên em bán laptop dỏm à
-    - bên em bán laptop bị hỏng à
-    - máy tính bên em vừa mua thì bị hỏng
-
-- intent: brands_info
-  examples: |
-    - Ở đây bán những hãng laptop nào?
-    - Các hãng laptop đang bán
-    - Các hãng laptop đang được bán ở đây
-    - Các hãng laptop nào có sẵn tại cửa hàng này?
-    - Các hãng laptop nào được bán ở đây?
-    - Cửa hàng cung cấp các hãng máy tính từ những thương hiệu nào?
-    - Cửa hàng có những hãng laptop gì?
-    - Cửa hàng có những hãng laptop nào?
-    - Cửa hàng này bán laptop của những thương hiệu gì?
-    - Cửa hàng này bán laptop của những thương hiệu nào?
-    - Cửa hàng này cung cấp các dòng laptop gì?
-    - Cửa hàng này cung cấp các dòng laptop nào?
-    - Cửa hàng có thể cho tôi biết tất cả các nhãn hiệu laptop mà cửa hàng có không?
-    - Cửa hàng này có các sản phẩm máy tính từ những nhãn hiệu nào?
-    - Cho tôi xem tất cả các hãng laptop
-    - Cho tôi xem toàn bộ các hãng laptop
-    - Cho tôi xem danh sách các hãng máy tính có sẵn tại đây?
-    - Có những hãng máy tính nào được bán tại cửa hàng?
-    - Có bao nhiêu hãng laptop đang được bán ở đây?
-    - Có những thương hiệu máy tính nào đang được ưa chuộng ở cửa hàng ?
-    - Tôi có thể mua laptop của những hãng nào tại đây?
-    - Tôi muốn biết ở đây bán các hãng laptop nào?
-    - Những hãng laptop nào phổ biến nhất tại cửa hàng?
-    - Đâu là các hãng máy tính phổ biến mà cửa hàng có?
-    - Các hãng laptop mà cửa hàng bán?
-    - Của hàng bán laptop của hãng nào?
-    - Các hãng laptop?
-    - Các hãng laptop đang bán?
-    - Tôi muốn biết cửa hàng đang bán laptop của hãng nào?
-
-- intent: demand_laptop_for_working
-  examples: |
-    - Giới thiệu cho tôi những dòng laptop sử dụng trong công việc
-    - Tôi cần tìm một chiếc laptop để làm công việc văn phòng
-    - Có những dòng laptop sử dụng cho công việc văn phòng?
-    - Tôi cần mua một chiếc laptop để sử dụng trong công việc văn phòng
-    - Tôi muốn mua một chiếc laptop để sử dụng trong công việc văn phòng
-    - Tôi đang cần tìm hiểu về các loại laptop phù hợp cho công việc văn phòng
-    - Đề xuất cho tôi một số dòng laptop phù hợp cho công việc văn phòng 
-    - Tôi cần một chiếc laptop đáp ứng được các yêu cầu công việc văn phòng
-    - Tư vấn cho tôi về các dòng laptop dùng cho công việc văn phòng 
-    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng cho công việc văn phòng
-    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp cho công việc văn phòng 
-    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng trong công việc hàng ngày
-    - Giới thiệu cho tôi về các dòng laptop phù hợp cho công việc văn phòng  
-    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các yêu cầu công văn phòng
-    - Tôi đang quan tâm đến các dòng laptop được thiết kế cho công việc văn phòng
-    - Tư vấn cho tôi về các dòng laptop phù hợp cho công việc văn phòng 
-    - Các dòng laptop phù hợp công việc văn phòng
-    - Các dòng laptop dành cho công việc văn phòng
-    - Các dòng laptop sử dụng cho công việc văn phòng
-    - Các dòng laptop phù hợp cho công việc văn phòng
-    - Tôi muốn mua laptop văn phòng
-    - Tôi muốn một laptop văn phòng
-    - laptop văn phòng
-    - Tôi muốn xem laptop văn phòng
-    - Cho tôi xem laptop văn phòng
-
-- intent: demand_laptop_for_gaming
-  examples: |
-    - Giới thiệu cho tôi những dòng laptop sử dụng để chơi game
-    - Tôi cần tìm một chiếc laptop để chơi game
-    - Có những dòng laptop phù hợp để chơi game?
-    - Tôi cần mua một chiếc laptop để chơi game
-    - Tôi muốn mua một chiếc laptop để chơi game
-    - Tôi đang cần tìm hiểu về các loại laptop phù hợp để chơi game
-    - Đề xuất cho tôi một số dòng laptop phù hợp để chơi game
-    - Tôi cần một chiếc laptop đáp ứng được các tựa game mới
-    - Tư vấn cho tôi về các dòng laptop dùng để chơi game
-    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng để chơi game
-    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp để chơi game
-    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng để chơi game
-    - Giới thiệu cho tôi về các dòng laptop phù hợp để chơi game
-    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các tựa game mới
-    - Tôi đang quan tâm đến các dòng laptop được thiết kế để chơi game
-    - Tư vấn cho tôi về các dòng laptop phù hợp để chơi game
-    - Các dòng laptop phù hợp cho gaming
-    - Các dòng laptop dành cho gamer
-    - Các dòng laptop sử dụng để chơi game
-    - Các dòng laptop phù hợp để chơi game
-    - Laptop cho sinh viên có thể chơi game
-    - Laptop cho học sinh có thể chơi game
-    - Laptop học sinh, sinh viên để chơi game
-    - Laptop cấu hình mạnh để chơi game
-    - Laptop cấu hình khủng để chơi game
-    - Laptop vừa học vừa chơi game
-    - Tôi muốn mua laptop chơi game
-    - Tôi muốn một laptop chơi game
-    - laptop chơi game
-    - Tôi muốn xem laptop chơi game
-    - Cho tôi xem laptop chơi game  
-
-- intent: demand_laptop_for_studying
-  examples: |
-    - Giới thiệu cho tôi những dòng laptop sử dụng trong học tập
-    - Tôi cần tìm một chiếc laptop để học tập
-    - Có những dòng laptop sử dụng cho việc học tập
-    - Tôi cần mua một chiếc laptop để sử dụng trong học tập
-    - Tôi muốn mua một chiếc laptop để sử dụng trong học tập
-    - Tôi đang cần tìm hiểu về các loại laptop phù hợp cho việc học tập
-    - Đề xuất cho tôi một số dòng laptop phù hợp cho việc học tập
-    - Tôi cần một chiếc laptop đáp ứng được các yêu cầu cho việc học tập
-    - Tư vấn cho tôi về các dòng laptop dùng cho việc học tập
-    - Tôi đang tìm kiếm một chiếc laptop chuyên dụng trong việc học tập
-    - Gợi ý cho tôi một số lựa chọn về các dòng laptop phù hợp cho việc học tập
-    - Tôi muốn mua một chiếc laptop chất lượng để sử dụng trong việc học tập
-    - Giới thiệu cho tôi về các dòng laptop phù hợp cho việc học tập
-    - Giúp tôi lựa chọn một chiếc laptop đáp ứng được các yêu cầu trong việc học tập
-    - Tôi đang quan tâm đến các dòng laptop được thiết kế cho việc học tập
-    - Tư vấn cho tôi về các dòng laptop phù hợp cho học tập
-    - Các dòng laptop phù hợp để học tập
-    - Các dòng laptop dành cho việc học tập
-    - Các dòng laptop sử dụng cho việc học tập
-    - Các dòng laptop phù hợp cho việc học tập  
-    - Các laptop để học tập
-    - Các laptop dành cho học sinh
-    - Các laptop cho học sinh
-    - Laptop cho học sinh
-    - Laptop cho học sinh để học tập
-    - Laptop cho sinh viên để học tập
-    - Laptop cho học sinh, sinh viên
-    - Laptop cho sinh viên để học tập
-    - Tôi muốn mua laptop học tập
-    - Tôi muốn một laptop học tập
-    - laptop học tập
-    - Tôi muốn xem laptop học tập
-    - Cho tôi xem laptop học tập   
-
-- intent: laptop_with_price_under
-  examples: |
-    - Các dòng laptop giá dưới [15](price_under) triệu
-    - Tư vấn cho tôi về các dòng laptop dưới [100](price_under) tr không?
-    - Cho tôi biết các dòng laptop có giá dưới [20](price_under) trieu được không?
-    - Có những dòng laptop nào dưới [30](price_under) triệu?
-    - Tôi đang tìm kiếm laptop giá dưới [100](price_under) triệu
-    - Có lựa chọn nào cho laptop dưới [50](price_under) triệu không? 
-    - Tôi muốn mua một laptop với ngân sách dưới [5](price_under) tr
-    - Tư vấn cho tôi về laptop giá rẻ dưới [10](price_under) tr
-    - Tôi đang muốn tìm laptop với giá dưới [30](price_under) triệu
-    - Tôi muốn mua một chiếc laptop với ngân sách tối đa là [29](price_under) triệu
-    - Những dòng laptop nào dưới [28](price_under) triệu đáng để mua
-    - Giới thiệu cho tôi một số dòng laptop dưới [27(price_under) triệu
-    - Gợi ý cho tôi một số dòng laptop có giá dưới [26](price_under) triệu
-    - Tôi đang cần mua một chiếc laptop với ngân sách dưới [25](price_under) triệu
-    - Giới thiệu cho tôi các dòng laptop dưới [24](price_under) triệu đang được ưa dùng
-    - Tôi muốn mua một chiếc laptop mới nhưng ngân sách dưới [23](price_under) triệu
-    - Cho tôi biết về các dòng laptop dưới [22](price_under) triệu
-    - Có những dòng laptop nào có giá thấp hơn [21](price_under) triệu đồng đáng để mua ?
-    - Cho tôi xin một số gợi ý về các dòng laptop có giá dưới [20](price_under) triệu
-    - Laptop giá dưới [15](price_under) triệu
-    - Laptop dưới [20](price_under) triệu
-    - Laptop dưới [30](price_under) triệu
-    - Tôi muốn mua Laptop dưới [21](price_under) triệu
-    - Cho tôi xem Laptop dưới [55](price_under) triệu
-    - Cho tôi xem Laptop dưới [45](price_under) triệu
-    - Giá dưới [99](price_under)
-    - Giá dưới [98](price_under) trieu
-    - Giá dưới [56](price_under) triệu đồng
-    - Tìm laptop dưới [54](price_under) triệu đồng
-    - Tìm laptop dưới [55](price_under) triệu
-    - Mua laptop dưới [40](price_under) triệu
-    - Mua laptop dưới [10](price_under) triệu
-    - Có laptop dưới [12](price_under) triệu không?
-    - Có bán laptop dưới [15](price_under) triệu không?
-    - Ở đây có bán laptop dưới [20](price_under) triệu không?
-    - Cửa hàng có bán laptop dưới [21](price_under) triệu không?
-    - Cho tôi xem các laptop dưới [51](price_under) triệu nào
-    - Cho tôi xem các laptop dưới [62](price_under) đi
-    - Có bán laptop dưới [73](price_under) triệu không shop?
-    - Có bán laptop dưới [84](price_under) triệu không?
-    - Gợi ý laptop dưới [27](price_under) triệu
-    - ngân sách [9](price_under) triệu
-    - tôi chỉ có [12](price_under) triệu
-    - ngân sách của tôi có [15](price_under) triệu
-    - muốn xem laptop dưới [33](price_under) triệu
-    - xem laptop dưới [33](price_under) triệu
-    - cho xem laptop dưới [33](price_under) triệu
-    - em có [33](price_under) triệu, em muốn mua laptop
-    - chị có [50](price_under) triệu, cho chị tham khảo laptop bên em được không?
-    - anh muốn tham khảo laptop bên em giá dưới [99](price_under) triệu
-    - tham khảo laptop giá dưới [88](price_under) triệu
-
-- intent: laptop_with_price_above
-  examples: |
-    - Các dòng laptop giá trên [15](price_above) triệu
-    - Tư vấn cho tôi về các dòng laptop trên [66](price_above) tr không?
-    - Cho tôi biết các dòng laptop có giá trên [55](price_above) trieu được không?
-    - Có những dòng laptop nào dưới [44](price_above) triệu?
-    - Tôi đang tìm kiếm laptop giá trên [11](price_above) triệu
-    - Có lựa chọn nào cho laptop trên [22](price_above) triệu không? 
-    - Tôi muốn mua một laptop với ngân sách trên [33](price_above) tr
-    - Tư vấn cho tôi về laptop giá rẻ trên [100](price_above) tr
-    - Tôi đang muốn tìm laptop với giá trên [100](price_above) triệu
-    - Những dòng laptop nào trên [90](price_above) triệu đáng để mua
-    - Giới thiệu cho tôi một số dòng laptop trên [80](price_above) triệu
-    - Gợi ý cho tôi một số dòng laptop có giá trên [70](price_above) triệu
-    - Tôi đang cần mua một chiếc laptop với ngân sách trên [60](price_above) triệu
-    - Giới thiệu cho tôi các dòng laptop trên [50](price_above) triệu đang được ưa dùng
-    - Tôi muốn mua một chiếc laptop mới nhưng ngân sách trên [40](price_above) triệu
-    - Cho tôi biết về các dòng laptop trên [30](price_above) triệu
-    - Có những dòng laptop nào có giá cao hơn [20](price_above) triệu đồng đáng để mua ?
-    - Cho tôi xin một số gợi ý về các dòng laptop có giá trên [10](price_above) triệu   
-    - Laptop giá trên [15](price_above) triệu
-    - Laptop trên [20](price_above) triệu
-    - Laptop trên [30](price_above) triệu
-    - Tôi muốn mua Laptop trên [21](price_above) triệu
-    - Cho tôi xem Laptop trên [55](price_above) triệu
-    - Cho tôi xem Laptop trên [45](price_above) triệu
-    - Giá trên [99](price_above)
-    - Giá trên [98](price_above) trieu
-    - Giá trên [56](price_above) triệu đồng
-    - Tìm laptop trên [54](price_above) triệu đồng
-    - Tìm laptop trên [55](price_above) triệu
-    - Mua laptop trên [40](price_above) triệu
-    - Mua laptop trên [10](price_above) triệu
-    - Có laptop trên [12](price_above) triệu không?
-    - Có bán laptop trên [15](price_above) triệu không?
-    - Ở đây có bán laptop trên [20](price_above) triệu không?
-    - Cửa hàng có bán laptop trên [21](price_above) triệu không?    
-    - Cho tôi xem các laptop trên [51](price_above) triệu nào
-    - Cho tôi xem các laptop trên [62](price_above) đi
-    - Có bán laptop trên [73](price_above) triệu không shop?
-    - Có bán laptop trên [84](price_above) triệu không?
-    - Gợi ý laptop trên [27](price_above) triệu
-    - muốn xem laptop trên [33](price_above) triệu
-    - xem laptop trên [33](price_above) triệu
-    - cho xem laptop trên [33](price_above) triệu
-    - anh muốn tham khảo laptop bên em giá trên [99](price_above) triệu
-    - tham khảo laptop giá trên [88](price_above) triệu
-    - anh muốm xem laptop giá trên [77](price_above) triệu của bên em
-    - bên em có bán mẫu laptop nào giá trên [55](price_above) triệu không?
-    - bên shop có bán mẫu laptop nào giá trên [66](price_above) triệu không vậy?
-    - cho chị xem laptop giá trên [44](price_above) triệu đi
-    - cho em tham khảo các mẫu laptop giá trên [33](price_above) triệu được không ạ.
-    - em muốn mua laptop giá trên [22](price_above) triệu.
-
-- intent: warranty_police
-  examples: |
-    - Chính sách bảo hành
-    - Thông tin về Chính sách bảo hành
-    - Cho tôi biết chính sách bảo hành
-    - Cho tôi biết thông tin bảo hành
-    - Cung cấp cho tôi thông tin bảo hành
-    - Laptop X có chính sách bảo hành như thế nào?
-    - Laptop X bảo hành trong bao lâu
-    - Chính sách bảo hành của laptop X có áp dụng cho tất cả các lỗi
-    - Kiểm tra chính sách bảo hành của laptop X
-    - Việc đổi sản phẩm trong chính sách bảo hành của laptop X
-    - Tôi cần phải liên hệ với ai nếu tôi gặp vấn đề về chính sách bảo hành
-    - Chính sách bảo hành trong trường hợp rơi vỡ của laptop X
-    - Cần phải liên hệ với ai nếu tôi gặp vấn đề về chính sách bảo hành của laptop X
-    - Laptop X lỗi phần mềm có bảo hành không?
-    - kiểm tra thời gian bảo hành còn lại của laptop X
-    - Chính sách bảo hành của laptop X có bao gồm đổi trả 
-    - Tôi muốn biết về chính sách bảo hành
-    - Tôi muốn biết về chính sách bảo hành của laptop
-    - Tôi muốn viết về chính sách bảo hành như thế nào
-    - Chính sách bảo hành như thế nào
-    - Thông tin bảo hành như thế nào
-    - Thông tin bảo hành như nào
-    - Chính sách bảo hành ra sao
-    - Bảo hành trong bao lâu
-    - Cho tôi thông tin về chính sách bảo hành
-    - Chính sách bảo hành của cửa hàng như thế nào
-    - Chính sách bảo hành của cửa hàng ra làm sao
-    - Có bảo hành không
-    - Có chấp nhận bảo hành không
-    - Có thông tin bảo hành không
-    - Sản phẩm có bảo hành không
-    - bảo hành như thế nào vậy
-    - có bảo hành sản phẩm này không
-    - sản phẩm được bảo hành như thế nào
-    - shop có bảo hành không
-    - bên em có bảo hành không
-    - em có bảo hành không
-    - anh muốn bảo hành laptop
-    - anh muốn mang laptop đi bảo hành
-    - anh muốn mang máy tính đi bảo hành
-    - anh muốn bảo hành laptop của anh
-    - máy chị bị hỏng, chị muốn bảo hành
-    - máy em bị hư màn hình, có bảo hành không ạ
-    - cho em xin thông tin bảo hành
-  
-- intent: promotion
-  examples: |
-    - Đang có những chương trình khuyến mãi nào ở cửa hàng?
-    - Các sản phẩm laptop đang được khuyến mãi
-    - Các ưu đãi khi mua laptop tại cửa hàng
-    - Cửa hàng đang có những chương trình khuyến mãi cho sản phẩm nào?
-    - Có những chương trình khuyến mãi nào tại cửa hàng?
-    - Thông tin chi tiết về các chương trình khuyến mãi
-    - Cửa hàng đang triển khai chương trình khuyến mãi nào trong thời gian này?
-    - Các chương trình khuyến mãi
-    - Hãy cho tôi biết thông tin về các chương trình khuyến mãi tại cửa hàng
-    - Hãy cho tôi biết thông tin về các ưu đãi khi mua hàng
-    - Cung cấp cho tôi thông tin về các ưu đãi khi mua hàng
-    - Cung cấp cho tôi thông tin về các chương trình khuyến mãi khi mua hàng
-    - Các sản phẩm laptop nào đang được giảm giá
-    - Các sản phẩm laptop nào đang có ưu đãi 
-    - Các sản phẩm laptop đang được giảm mạnh
-    - Chương trình khuyến mãi
-    - Đang có khuyến mãi gì
-    - Khuyến mãi
-    - Chương trình khuyến mãi
-    - Sản phẩm khuyến mãi
-    - Sản phẩm nào đang được khuyến mãi
-    - Tôi muốn biết sản phẩm nào đang được khuyến mãi
-    - Tôi muốn biết hiện tại có chương trình khuyến mãi nào không
-    - Có chương trình khuyến mãi nào không
-    - Có khuyến mãi gì
-    - laptop đang khuyến mãi
-    - cho tôi xem các mẫu laptop đang khuyến mãi đi
-    - tôi muốn biết các mẫu laptop đang khuyến mãi
-    - em muốn biết các chương trình khuyến mãi
-    - bên shop đang có chương trình khuyến mãi nào vậy ạ
-    - bên em có chương trình khuyến mãi nào không
-    - shop có đang khuyến mãi gì không?
-    - bên em có đang khuyến mãi gì không?
-    - bên shop đang có khuyến mãi gì vậy?
-    - cho mình xem các khuyến mãi đi
-    - cho xem các khuyến mãi
-    - tham khảo các khuyến mãi
-    - Cho xem các ưu đãi bên shop đang có
-    - shop đang có ưu đãi gì?
-    - bên em đang có các ưu đãi gì?
-    - bên em có đang ưu đãi gì không?
-    - bán laptop mà có ưu đãi gì không vậy?
-    - bán laptop mà có ưu đãi không?    
-    
-- intent: laptop_info
-  examples: |
-    - Laptop [Dell Inspiron 15 1234](laptop_name)
-    - Laptop [MSI Modern 15](laptop_name)
-    - Laptop [Acer Nitro 5](laptop_name)
-    - Thông tin về Laptop [Dell Inspiron 14 5678](laptop_name)
-    - Cấu hình Laptop [Dell Vostro 14 3430](laptop_name)
-    - Hãy cho tôi biết thông tin về laptop [Dell Vostro 15 7856](laptop_name)
-    - Hãy cho tôi biết thông tin về cấu hình của laptop [Dell XPS 13](laptop_name)
-    - Cung cấp cho tôi thông tin về laptop [Dell XPS 15](laptop_name)
-    - Cung cấp thông tin về card đồ họa của laptop [MSI Modern 14](laptop_name)
-    - Thông tin về CPU của laptop [MSI Modern 15](laptop_name)?
-    - Hãy cho tôi biết thông tin về CPU của laptop [Asus Vivobook 15](laptop_name)
-    - Cung cấp thông tin về laptop [Asus Vivobook 14](laptop_name)
-    - Thông tin về giá của laptop [Asus Vivobook 15](laptop_name)?
-    - Cung cấp thông tin về giá của laptop [Asus Vivobook 14](laptop_name)
-    - Thông tin về laptop [Acer Nitro 5](laptop_name)?
-    - Hãy cho tôi biết thông tin về laptop [MSI Bravo 15](laptop_name)
-    - Cung cấp thông tin về laptop [MSI Bravo 15](laptop_name)
-    - Cấu hình của laptop [MSI Bravo 15](laptop_name)
-    - Tôi muốn mua laptop [Dell Inspiron 14 1234](laptop_name)
-    - Mua laptop [MSI Modern 14](laptop_name)
-    - Có bán laptop [MSI Modern 15](laptop_name) không?
-    - Ở đây có bán Laptop [Dell Inspiron 15 1234](laptop_name) không?
-    - Tôi muốn mua laptop [MSI GS66](laptop_name)
-    - Mua laptop [Asus Vivobook 15](laptop_name)
-    - Có bán laptop [Acer Nitro 5](laptop_name) không?
-    - Ở đây có bán Laptop [Acer Nitro 5](laptop_name) không?
-    - Có laptop [Acer Nitro 5](laptop_name) không?
-    - Có laptop [MSI GS66](laptop_name) không?
-    - Có laptop [MSI GS66 1234](laptop_name) không?
-    - Tôi muốn biết về Laptop [Asus Vivobook 15](laptop_name)
-    - Tôi đang quan tâm về laptop [Asus Vivobook 14 1234](laptop_name)
-    - Tôi đang quan tâm về laptop [MSI Modern 15](laptop_name)
-    - Cung cấp thông tin về giá của laptop [Macbook Air 14](laptop_name)
-    - Thông tin về laptop [Macbook Air 15](laptop_name)?
-    - Hãy cho tôi biết thông tin về laptop [Macbook Air 14 M1](laptop_name)
-    - Cung cấp thông tin về laptop [Macbook Air 15 M2](laptop_name)
-    - Cấu hình của laptop [Macbook Pro 14 M1 Pro](laptop_name)
-    - Tôi muốn mua laptop [Macbook Pro 16 M1 Max](laptop_name)
-    - Mua laptop [Macbook Pro 14](laptop_name)
-    - Có bán laptop [Macbook Pro 16](laptop_name) không?
-    - Ở đây có bán Laptop [Macbook Pro 16 M2 Pro Max](laptop_name) không?
-    - Tôi muốn mua laptop [Macbook Pro](laptop_name)    
-
-#- intent: laptop_info_price
-#  examples: |
-#    - Giá của laptop [Asus Vivobook 15](laptop_name)
-#    - Hãy cho tôi biết thông tin về giá của laptop [Asus Vivobook 14](laptop_name)
-#    - Giá laptop [Asus Vivobook 15](laptop_name)
-#    - Cho xin giá laptop [MSI GS66](laptop_name)
-#    - Cho tôi biết giá của [MSI GS66](laptop_name)?
-#    - [MSI Modern 14](laptop_name) bao nhiêu tiền
-#    - Laptop [MSI Modern 14](laptop_name) bao nhiêu tiền?
-#    - Laptop [MSI Modern 15](laptop_name) bán bao nhiêu?
-#    - [Acer Nitro 5](laptop_name) bán bao nhiêu?
-#    - Tôi muốn biết về giá tiền của [Acer Nitro 5](laptop_name)
-#    - Tôi muốn biết giá tiền của Laptop [Dell XPS 15](laptop_name)
-#    - Cho tôi biết Laptop [Dell XPS 15](laptop_name) bao nhiêu tiền?
-#    - Có thể cho biết giá của Laptop [Dell Vostro 15 7856](laptop_name) không?
-#    - Báo giá Laptop [Asus Zenbook 16](laptop_name)
-#    - [Asus Zenbook 15](laptop_name) giá
-#    - Laptop [Dell Inspiron 14 5678](laptop_name) giá
-#    - [Asus Zenbook 14](laptop_name) giá bán như thế nào?
-#    - Laptop [Dell Inspiron 14 5678](laptop_name) giá bán ra làm sao?
-#    - [Macbook Pro 14](laptop_name) bao nhiêu tiền
-#    - Laptop [Macbook Pro 16 Max](laptop_name) bao nhiêu tiền?
-#    - Laptop [Macbook Pro 14 M1](laptop_name) bán bao nhiêu?
-#    - [Macbook Air 14 M1](laptop_name) bán bao nhiêu?
-#    - Tôi muốn biết về giá tiền của [Macbook Air 14](laptop_name)
-#    - Tôi muốn biết giá tiền của Laptop [Macbook Air](laptop_name)
-#    - Cho tôi biết Laptop [Macbook Air 14 M2](laptop_name) bao nhiêu tiền?
-#    - Có thể cho biết giá của Laptop [Macbook Pro 16 M3](laptop_name) không?
-#    - Báo giá Laptop [HP Pro](laptop_name)
-#    - [HP Pro Max](laptop_name) giá bao nhiêu?
-#    - Laptop [HP Pro Pro Max](laptop_name) giá bao nhiêu?
-#    - [Macbook Pro Pro Max Max](laptop_name) giá bán như thế nào?
-#    - Laptop [Macbook Pro Pro Max Max Max](laptop_name) giá bán ra làm sao?
-
-- intent: laptop_of_brand
-  examples: |
-    - Cho tôi xem các Laptop của hãng [Dell](brand_name) 
-    - Các Laptop của hãng [Dell](brand_name) 
-    - Hãng [Dell](brand_name) có những laptop nào
-    - Cho tôi xem các Laptop của hãng [MSI](brand_name) 
-    - Các Laptop của hãng [MSI](brand_name) 
-    - Hãng [MSI](brand_name) có những laptop nào
-    - Cho tôi xem các Laptop của hãng [ASUS](brand_name) 
-    - Các Laptop của hãng [ASUS](brand_name) 
-    - Hãng [ASUS](brand_name) có những laptop nào    
-    - Cho tôi xem các Laptop của hãng [Acer](brand_name) 
-    - Các Laptop của hãng [Acer](brand_name) 
-    - Hãng [Acer](brand_name) có những laptop nào  
-    - Cho tôi xem các Laptop của hãng [HP](brand_name) 
-    - Các Laptop của hãng [HP](brand_name) 
-    - Hãng [HP](brand_name) có những laptop nào    
-    - Danh sách laptop của hãng [ASUS](brand_name)
-    - Cho tôi xem của hãng [MSI](brand_name)
-    - Cho tôi xem danh sách laptop của hãng [DELL](brand_name)
-    - Cho tôi xem danh sách của hãng (ASUS)(brand_name)
-    - Tham khảo laptop của hãng (ASUS)(brand_name)
-    - Tham khảo laptop của nhãn hiệu (ASUS)(brand_name)
-    - Cho tôi xem các Laptop của nhãn hiệu [ASUS](brand_name) 
-    - Các Laptop của nhãn hiệu [ASUS](brand_name) 
-    - nhãn hiệu [ASUS](brand_name) có những laptop nào    
-    - Cho tôi xem các Laptop của nhãn hiệu [Acer](brand_name) 
-    - Các Laptop của nhãn hiệu [Acer](brand_name) 
-    - nhãn hiệu [Acer](brand_name) có những laptop nào  
-    - Cho tôi xem các Laptop của nhãn hiệu [HP](brand_name) 
-    - Các Laptop của nhãn hiệu [HP](brand_name) 
-    - nhãn hiệu [Macbook](brand_name) có những laptop nào    
-    - Danh sách laptop của nhãn hiệu [Lenovo](brand_name)
-    - Cho tôi xem của nhãn hiệu [Macbook](brand_name)
-    - Cho tôi xem danh sách laptop của nhãn hiệu [Lenovo](brand_name)    
-    - Các Laptop của hãng [Lenovo](brand_name) 
-    - Hãng [Macbook]](brand_name) có những laptop nào    
-    - Danh sách laptop của hãng [Macbook](brand_name)
-    - Cho tôi xem của hãng [Lenovo](brand_name)
-    - Cho tôi xem danh sách laptop của hãng [Macbook](brand_name)
-    - Cho tôi xem danh sách của hãng (Macbook)(brand_name)
-    - Tham khảo laptop của hãng (Macbook)(brand_name)
-    - Tham khảo laptop của nhãn hiệu (Lenovo)(brand_name)    
-
-- intent: payment_method
-  examples: |
-    - bên shop có các hình thức thanh toán nào
-    - bên bạn có hình thức thanh toán nào
-    - hình thức thanh toán
-    - có hình thức thanh toán nào
-    - tôi muốn biết các hình thức thanh toán
-    - thanh toán như thế nào
-    - thanh toán ra làm sao
-    - tôi muốn thanh toán thì làm như thế nào
-    - có thanh toán online không?
-    - có thanh toán qua thẻ không?
-    - có thanh toán bằng tiền mặt không?
-    - tôi muốn thanh toán qua thẻ
-    - tôi muốn thanh toán bằng tiền mặt
-    - tôi muốn thanh toán online
-    - tôi có thể thanh toán bằng cách nào
-    - thanh toán
-    - hình thức thanh toán
-    - bên em chấp nhận hình thức thanh toán nào
-
-- intent: delivery
-  examples: |
-    - bên em có giao hàng không?
-    - bên em có ship tỉnh không
-    - bên em có ship COD không
-    - bên shop có nhận vẫn chuyển xa không
-    - bên em có vận chuyển máy đi tỉnh được không
-    - giao hàng nội thành
-    - giao hàng tỉnh lẻ
-    - giao máy nội thành
-    - giao máy tỉnh lẻ
-    - giao máy đi tỉnh khác
-    - ship máy tới tỉnh HCM được không?
-    - giao máy đi Hà Nội được không
-    - có giao hàng bưu điện không
-    - có giao hỏa tốc được không
-    - tôi muốn nhận máy liền được không
-    - tôi muốn nhận máy thì làm như thế nào
-
-- intent: information
-  examples: |
-    - thông tin liên lạc
-    - cho mình xin thông tin liên lạc
-    - cho tôi biết số điện thoại của cửa hàng
-    - số điện thoại của cửa hàng
-    - sdt của cửa hàng
-    - địa chỉ của cửa hàng
-    - cửa hàng có bao nhiêu chi nhánh
-    - chi nhánh
-    - có chi nhánh nào không
-    - tôi muốn biết chi nhánh có chi nhánh nào
-    - cửa hàng của bạn nằm ở đâu
-    - shop ở đâu vậy
-    - cửa hàng ở đâu vậy
-    - cửa hàng ở địa chỉ nào vậy
-    - địa chỉ
-    - địa chỉ của cửa hàng
-    - địa chỉ của shop
-    - tôi muốn đến trực tiếp cửa hàng
-    - tôi muốn đến cửa hàng
-    - em muốn đến cửa hàng lấy máy
-    - chị muốn đến cửa hàng lấy
-    - anh muốn biết địa chỉ của cửa hàng
-    - cửa hàng có gần tôi không
-    - cửa hàng của em có bao nhiêu chi nhánh
-    - cửa hàng có mấy chi nhánh
-    - các chi nhánh nằm ở đâu vậy
-    - cửa hàng của bạn ở đâu vậy
-    - tôi muốn biết địa chỉ
-    - tôi muốn biết số điện thoại liên lạc
-
 - intent: bot_challenge
   examples: |
     - bạn là ai?
-    - ai vậy?
-    - bạn có phải là Bot không?
-    - bạn có phải là con người không?
     - tôi đang nói chuyện với 1 con Bot đúng không?
+    - bạn có phải là con người không?
     - tôi đang nói chuyện với 1 người đúng không?
+- intent: give_name
+  examples: |
+    - [Em](customer_gender) là [Đào Lê Phương Trang](customer_name)
+    - [Anh](customer_gender) là [Thắng](customer_name)
+    - [Anh](customer_gender) là [Phạm Ngọc Duy](customer_name)
+    - [Em](customer_gender) tên là [Trang](customer_name)
+    - [Chị](customer_gender) là [Hằng](customer_name)
+    - [Chị](customer_gender) là [Thu Hằng](customer_name)
+    - [Em](customer_gender) là [Trang](customer_name)
+    - [Anh](customer_gender) tên là [Thắng](customer_name)
+    - [Chị](customer_gender) là [Trần Thu Hằng](customer_name)
+    - [Anh](customer_gender) là [Phạm Duy](customer_name)
+    - [Em](customer_gender) là [Lê Phương Trang](customer_name)
+    - [Anh](customer_gender) là [Trung Trần Anh Quân](customer_name)
+- intent: payment_method
+  examples: |
+    - tôi muốn biết các hình thức thanh toán
+    - Có chính sách giảm giá nào cho việc sử dụng một loại thanh toán cụ thể không?
+    - Thẻ quà tặng của cửa hàng có sẵn không và làm thế nào để sử dụng chúng?
+    - Có hỗ trợ thanh toán bằng cách sử dụng thẻ tín dụng ảo không?
+    - Có thể thanh toán bằng thẻ ghi nợ không?
+    - thanh toán như thế nào
+    - Có chính sách về việc kiểm tra giấy tờ thanh toán khi giao hàng không?
+    - Thẻ tín dụng nào được ưu tiên hoặc được hưởng lợi nhiều nhất khi thanh toán?
+    - Có hỗ trợ thanh toán bằng cách sử dụng thẻ từ như Visa Debit hoặc Mastercard Debit không?
+    - Có chính sách trả góp nào cho việc mua hàng không?
+    - Có chính sách về việc thanh toán trả góp qua các ngân hàng hoặc tổ chức tín dụng không?
+    - tôi muốn thanh toán bằng tiền mặt
+    - Có chính sách về việc hủy bỏ hoặc thay đổi thanh toán sau khi đã xác nhận đơn hàng không?
+    - có hình thức thanh toán nào
+    - Có chính sách về hình thức thanh toán khi đặt hàng trước không?
+    - tôi muốn thanh toán online
+    - Có chính sách về việc sử dụng mã giảm giá hoặc phiếu quà tặng khi thanh toán không?
+    - Có hỗ trợ thanh toán thông qua ví điện tử của các đối tác địa phương không?
+    - Có hỗ trợ thanh toán qua ví điện tử nước ngoài như Apple Pay hoặc Google Pay không?
+    - Có chính sách đặc biệt nào cho việc thanh toán bằng cách sử dụng ứng dụng di động của cửa hàng không?
+    - tôi có thể thanh toán bằng cách nào
+    - Có chính sách về việc thanh toán theo kỳ hạn cho các dịch vụ hoặc sản phẩm có thể đăng ký không?
+    - Thẻ tín dụng nào được chấp nhận?
+    - Có chính sách đặt cọc không khi mua hàng trực tuyến?
+    - bên bạn có hình thức thanh toán nào
+    - có thanh toán online không?
+    - Có hỗ trợ thanh toán bằng tiền mặt khi nhận hàng không?
+    - tôi muốn thanh toán thì làm như thế nào
+    - Có chính sách về việc hỗ trợ thanh toán theo đợt cho các đơn hàng lớn không?
+    - bên shop có các hình thức thanh toán nào
+    - có thanh toán bằng tiền mặt không?
+    - Có chính sách về việc trả hàng và hoàn tiền không?
+    - thanh toán
+    - hình thức thanh toán
+    - Thanh toán qua chuyển khoản ngân hàng cần thông tin gì?
+    - Có khuyến mãi hoặc ưu đãi đặc biệt cho việc thanh toán bằng thẻ tín dụng không?
+    - Có chính sách về việc xác minh thanh toán của khách hàng không?
+    - tôi muốn thanh toán qua thẻ
+    - thanh toán ra làm sao
+    - Hãy liệt kê các phương thức thanh toán trực tuyến mà bạn hỗ trợ.
+    - Có chính sách về việc thanh toán bằng hình thức chuyển khoản ngân hàng không?
+    - Có chấp nhận thanh toán qua PayPal không?
+    - Có chính sách về việc bảo vệ thông tin thanh toán của khách hàng không?
+- intent: deny
+  examples: |
+    - Tôi không đồng ý và cần giải thích rõ hơn.
+    - không được
+    - Tôi không đồng ý và muốn đề xuất một góc nhìn khác.
+    - Không, tôi không ổn với điều đó.
+    - Tôi không đồng ý và muốn biết lập luận của bạn.
+    - không
+    - không đúng
+    - Tôi không đống ý
+    - Tôi không tán thành.
+    - không phải như vậy đâu
+    - không phải
+    - Không, tôi không ủng hộ ý kiến đó.
+    - Không, tôi không đồng ý với quan điểm đó.
+    - no
+    - Không, tôi không nghĩ vậy.
+    - không phải như vậy
+    - Tôi không đồng ý và muốn thảo luận thêm.
+    - sai rồi đó
+    - Tôi không nhất trí và muốn đưa ra ý kiến của mình.
+    - Tôi không nghĩ vậy.
+    - Không, tôi không đồng ý với quan điểm của bạn.
+    - Tôi không chấp nhận.
+    - sai rồi
+    - Tôi không thấy ý kiến đó đúng.
+    - Không, tôi không tin vào điều đó.
+    - Tôi không đồng ý và muốn trao đổi ý kiến.
+    - Tôi không đồng ý và muốn thảo luận kỹ hơn về vấn đề này.
+    - Tôi không ủng hộ quan điểm đó.
+    - Tôi không đồng ý với quan điểm đó.
+    - Tôi không tán thành và muốn biết thêm chi tiết.
+    - Không, tôi không tán thành với điều đó.
+    - Tôi không đồng ý và muốn đưa ra lập luận của mình.
+    - Tôi không đồng ý và cảm thấy không thoải mái với điều đó.
+    - Tôi không đồng ý và cần giải thích thêm.
+    - Không phải như vậy.
+    - k
+    - Tôi không đồng ý và muốn biết lý do.
+    - Không, tôi không tin.
+    - Tôi không đồng ý và muốn thảo luận thêm về vấn đề này.
+    - kh
+    - Tôi không đồng ý và muốn biết thêm về lập luận của bạn.
+    - Tôi không tán thành với ý kiến đó.
+    - Tôi không đồng tình.
+    - Không, điều đó không đúng.
+    - Tôi không đồng ý và muốn diễn đạt quan điểm của mình.
+    - Tôi không đồng ý và có lý do của mình.
+    - Tôi không nhất trí.
+- intent: information
+  examples: |
+    - sdt của cửa hàng
+    - cửa hàng có mấy chi nhánh
+    - shop ở đâu vậy
+    - Bạn có chương trình thư ngỏ thông qua email không?
+    - tôi muốn biết địa chỉ
+    - Bạn có sử dụng dịch vụ nhắn tin để gửi thông tin khuyến mãi không?
+    - Có ứng dụng di động của cửa hàng không? Nếu có, làm thế nào để tải xuống?
+    - cửa hàng của em có bao nhiêu chi nhánh
+    - tôi muốn đến cửa hàng
+    - Có chương trình đăng ký tin tức nào không?
+    - địa chỉ của cửa hàng
+    - Có đường dẫn nào để tôi đăng ký nhận thông báo qua email không?
+    - địa chỉ của shop
+    - Bạn có hỗ trợ qua trò chuyện trực tiếp không?
+    - Bạn có dịch vụ hỗ trợ qua mạng xã hội không?
+    - chi nhánh
+    - Bạn có trang web hoặc trang chính thức nào trên mạng xã hội không?
+    - tôi muốn biết chi nhánh có chi nhánh nào
+    - em muốn đến cửa hàng lấy máy
+    - địa chỉ
+    - Có sẵn dịch vụ hỗ trợ qua trang web không?
+    - cửa hàng ở đâu vậy
+    - Bạn có số hotline hỗ trợ khách hàng không?
+    - Có cơ sở nào khác của cửa hàng không? Nếu có, ở đâu?
+    - tôi muốn đến trực tiếp cửa hàng
+    - Có địa chỉ email nào để liên hệ với cửa hàng không?
+    - cho tôi biết số điện thoại của cửa hàng
+    - Bạn có sử dụng dịch vụ tin nhắn tự động để gửi thông tin khuyến mãi không?
+    - các chi nhánh nằm ở đâu vậy
+    - Bạn có sử dụng dịch vụ cuộc gọi tự động để thông báo về các chương trình khuyến mãi không?
+    - cửa hàng có bao nhiêu chi nhánh
+    - Có dịch vụ gọi điện tự động để thông báo về các ưu đãi hoặc sự kiện không?
+    - cửa hàng ở địa chỉ nào vậy
+    - Bạn có trang web di động không?
+    - Bạn có chương trình thưởng khách hàng không?
+    - anh muốn biết địa chỉ của cửa hàng
+    - cho mình xin thông tin liên lạc
+    - thông tin liên lạc
+    - có chi nhánh nào không
+    - Bạn có sử dụng dịch vụ nhắn tin hoặc chat trực tuyến trên trang web không?
+    - Bạn có thể cung cấp thông tin về các chi nhánh hoặc cửa hàng liên kết không?
+    - số điện thoại của cửa hàng
+    - Có địa chỉ cửa hàng vật lý không? Nếu có, ở đâu?
+    - cửa hàng của bạn ở đâu vậy
+    - Có chương trình đăng ký tin tức qua tin nhắn không?
+    - Bạn có sử dụng dịch vụ hỗ trợ qua mạng xã hội không?
+    - Bạn có trang mạng xã hội nào mà tôi có thể theo dõi để nhận thông tin cập nhật về cửa hàng không?
+- intent: complain
+  examples: |
+    - Tôi muốn khiếu nại về sự hỏng hóc của máy tính mới mua gần đây.
+    - máy tính vừa mua thì bị hỏng
+    - Tôi muốn báo cáo rằng máy tính mà tôi đã mua không khởi động được.
+    - laptop không tốt
+    - Máy tính mới mua không hoạt động đúng cách và tôi muốn khiếu nại về vấn đề này.
+    - Tôi cần thông báo rằng máy tính của tôi không khởi động được sau khi mua.
+    - sản phẩm không đúng với mô tả
+    - sản phẩm không chất lượng
+    - tôi vừa mua laptop thì bị hư
+    - tôi đang thấy rất thất vọng
+    - Tôi đang gặp sự cố với máy tính mà tôi mua và muốn khiếu nại về vấn đề này.
+    - Máy tính mà tôi mua gần đây không hoạt động đúng cách và tôi muốn báo cáo về vấn đề này.
+    - tôi thấy thất vọng quá
+    - sản phẩm dỏm
+    - Máy tính mới của tôi gặp vấn đề kỹ thuật và tôi muốn khiếu nại về sự cố này.
+    - dịch vụ không tốt
+    - tôi vừa mua laptop thì bị hỏng
+    - Máy tính mới mua của tôi gặp sự cố kỹ thuật và tôi cần sự giúp đỡ để khắc phục.
+    - sản phẩm này không đúng với mô tả
+    - Máy tính mà tôi đã mua gặp vấn đề và tôi muốn khiếu nại về điều đó.
+    - sản phẩm kém chất lượng
+    - dịch vụ quá kém
+    - Máy tính mà tôi đã mua gần đây gặp sự cố và tôi cần sự hỗ trợ để sửa chữa.
+    - Máy tính mà tôi đã mua không hoạt động và tôi muốn báo cáo về vấn đề này.
+    - Tôi muốn thông báo về sự cố kỹ thuật với máy tính mà tôi đã mua.
+    - máy tính bên em vừa mua thì bị hỏng
+    - Máy tính mà tôi đã mua không hoạt động và tôi muốn thông báo về sự cố này.
+    - tôi không thích dịch vụ của shop
+    - mua máy tính nhưng không được bảo hành
+    - Tôi muốn khiếu nại về sự hỏng hóc của máy tính mà tôi đã mua gần đây.
+    - Máy tính mới mua của tôi bị hỏng và tôi cần sự hỗ trợ để giải quyết vấn đề này.
+    - dịch vụ kém
+    - Tôi muốn thông báo về trường hợp hỏng hóc của máy tính sau khi mua.
+    - bán máy tính không chất lượng
+    - máy tính dỏm
+    - Tôi muốn báo cáo rằng máy tính mới mua không hoạt động đúng cách.
+    - Tôi đang gặp vấn đề với máy tính mà tôi mua và muốn thông báo về sự cố này.
+    - thất vọng quá đi
+    - Máy tính mới mua không hoạt động và tôi muốn khiếu nại về trường hợp này.
+    - laptop không chất lượng
+    - máy tính vừa mua thì bị hư
+    - tôi không hài lòng
+    - thấy thất vọng quá
+    - tôi thấy không thích
+    - Máy tính mới mua của tôi bị hỏng và tôi muốn báo cáo về trường hợp này.
+    - Máy tính mà tôi đã mua không khởi động được và tôi muốn thông báo về vấn đề này.
+    - Tôi gặp phải sự cố với máy tính sau khi mua và tôi muốn báo cáo về nó.
+    - Máy tính mới mua không hoạt động đúng cách và tôi cần sự hỗ trợ để giải quyết vấn đề.
+    - dịch vụ quá tệ
+    - tôi không thích dịch vụ ở đây
+    - bên em bán laptop dỏm à
+    - tôi không thích sản phẩm này
+- intent: delivery
+  examples: |
+    - Có những phương thức giao nhận hàng nào được cung cấp tại cửa hàng của bạn?
+    - Có dịch vụ giao hàng quốc tế ưu đãi không?
+    - ship máy tới tỉnh HCM được không?
+    - Có chính sách giao hàng miễn phí cho đơn hàng trên một ngưỡng trọng lượng không?
+    - Bạn có chính sách giao hàng miễn phí cho các đơn hàng đặc biệt không?
+    - bên em có ship tỉnh không
+    - có giao hỏa tốc được không
+    - Bạn có dịch vụ giao hàng nhanh vào cuối tuần không?
+    - tôi muốn nhận máy liền được không
+    - Có dịch vụ giao hàng quốc tế nhanh chóng và đáng tin cậy không?
+    - Có dịch vụ giao hàng tận nơi 24/7 cho các sản phẩm quan trọng không?
+    - Bạn có chính sách giao hàng nhanh trong vòng 6 giờ không?
+    - Bạn có chính sách giao hàng nhanh chậm nhưng giá rẻ không?
+    - Có dịch vụ giao hàng quốc tế với phí vận chuyển hợp lý không?
+    - giao máy đi Hà Nội được không
+    - có giao hàng bưu điện không
+    - Có chính sách giao hàng miễn phí cho các đơn hàng đặc biệt không?
+    - Có hỗ trợ giao hàng tận nơi 24/7 không?
+    - Bạn có dịch vụ giao hàng nhanh dành cho các sản phẩm cấp độ cao không?
+    - giao máy đi tỉnh khác
+    - Có chính sách giao hàng miễn phí cho thành viên đăng ký không?
+    - Bạn có dịch vụ giao hàng tận nơi trong vòng 1 giờ không?
+    - giao hàng tỉnh lẻ
+    - Bạn có chính sách giao hàng miễn phí cho các đơn hàng định kỳ không?
+    - Bạn có dịch vụ giao hàng nhanh cho các sản phẩm cần gấp không?
+    - Bạn có chính sách giao hàng nhanh trong vòng 8 giờ không?
+    - Có dịch vụ giao hàng tận nơi vào buổi tối không?
+    - Có chính sách giao hàng miễn phí cho các địa điểm đặc biệt không?
+    - Bạn có thể cung cấp dịch vụ giao hàng trước giờ làm việc không?
+    - Bạn có chấp nhận giao hàng quốc tế không?
+    - Có chính sách giao hàng nhanh trong vòng 12 giờ không?
+    - Bạn có chính sách giao hàng miễn phí cho các địa điểm gần cửa hàng không?
+    - Bạn có dịch vụ giao hàng tận nơi trong ngày cho các đơn hàng cấp bách không?
+    - bên em có giao hàng không?
+    - Có dịch vụ giao hàng tận nơi trong vòng 4 giờ không?
+    - Có dịch vụ giao hàng tận nơi cho các đơn hàng cấp bách không?
+    - Có dịch vụ giao hàng tận nơi cho sản phẩm t fragile không?
+    - Bạn có chính sách giao hàng miễn phí cho đơn hàng trên một ngưỡng giá không?
+    - Có dịch vụ giao hàng quốc tế nhanh chóng không?
+    - Bạn có chính sách giao hàng miễn phí cho địa điểm nhận hàng cố định không?
+    - Bạn có dịch vụ giao hàng trong khu vực đô thị không?
+    - Bạn có hỗ trợ giao hàng tận nơi không?
+    - Có dịch vụ giao hàng tận nơi 24/7 cho các đơn hàng khẩn cấp không?
+    - Có chính sách giao hàng miễn phí cho các đơn hàng vượt quá một số tiền nhất định không?
+    - Có dịch vụ giao hàng nhanh trong ngày không?
+    - Bạn có dịch vụ giao hàng quốc tế chất lượng không?
+    - bên shop có nhận vẫn chuyển xa không
+    - giao hàng nội thành
+    - Bạn có dịch vụ giao hàng tận nơi trong vòng 2-3 ngày không?
+    - Bạn có dịch vụ giao hàng quốc tế tốt nhất trong ngành không?
+    - Bạn có dịch vụ giao hàng quốc tế với chi phí phải chăng không?
+    - Có dịch vụ giao hàng miễn phí cho đơn hàng nào?
+    - bên em có vận chuyển máy đi tỉnh được không
+- intent: goodbye
+  examples: |
+    - Goodbye, hãy giữ mình ổn định!
+    - Goodbye!
+    - Hẹn gặp lại!
+    - bạn đừng nói nữa
+    - Tôi sẽ quay lại sau!
+    - Cảm ơn bạn và chúc một ngày tốt lành!
+    - Chúc một ngày tốt lành và hãy luôn vui vẻ!
+    - Goodbye, hãy cẩn thận!
+    - Xin hẹn gặp lại!
+    - bye
+    - Chúc bạn có một ngày thú vị!
+    - tôi đang bận
+    - Tạm biệt và hẹn gặp lại!
+    - Cảm ơn và chúc một ngày tốt lành!
+    - Cảm ơn bạn đã trò chuyện với tôi!
+    - Chúc một buổi trưa vui vẻ!
+    - Chúc bạn có một ngày tốt lành!
+    - kết thúc
+    - Goodbye, hãy giữ an toàn!
+    - Tôi sẽ quay lại sau khi cần!
+    - nói chuyện sau nhé
+    - chào tạm biệt
+    - Hẹn gặp lại bạn vào thời gian khác!
+    - đừng làm phiền tôi
+    - tôi đang không rảnh
+    - tạm biệt
+    - Chúc bạn có một ngày năng động!
+    - Goodbye, hãy giữ mình cân đối!
+    - tôi sẽ liên lạc lại sau
+    - cám ơn và hẹn gặp lại
+    - Chúc một buổi tối êm đềm!
+    - Rất vui được trò chuyện với bạn!
+    - Tạm biệt và hy vọng gặp lại bạn sớm!
+    - Bye, hãy giữ mình khoẻ mạnh!
+    - Rất vui được trò chuyện, chúc một ngày tốt lành!
+    - Tạm biệt, hy vọng sớm gặp lại bạn!
+    - Cảm ơn bạn đã dành thời gian!
+    - gặp lại sau nhé
+    - Tạm biệt và cảm ơn bạn đã ghé thăm!
+    - Chúc một buổi tối vui vẻ!
+    - tôi sẽ quay lại sau
+    - See you later!
+    - Tạm biệt và chúc bạn may mắn!
+    - tôi không muốn nói chuyện nữa
+    - gặp lại sau
+    - Chào tạm biệt!
+    - Tạm biệt!
+    - Chúc bạn may mắn!
+    - bai
+    - Bye!
+    - Hẹn gặp lại bạn sau!
+    - Hẹn gặp lại vào lần sau!
+    - kết thúc trò chuyện
+    - Chúc một ngày tốt lành!
+    - See you soon!
+    - liên lạc sau nhé
+    - Chúc một buổi chiều tuyệt vời!
+- intent: laptop_of_brand
+  examples: |
+    - Hãy liệt kê các dòng laptop Surface từ [Microsoft](brand_name) .
+    - nhãn hiệu [Acer](brand_name) có những laptop nào
+    - Cho tôi xem các Laptop của hãng [Acer](brand_name)
+    - Hãng [Macbook]](brand_name) có những laptop nào
+    - Laptop của [Asus](brand_name) bao gồm những mẫu nào?
+    - Các Laptop của hãng [Dell](brand_name)
+    - Cho tôi xem các Laptop của hãng [HP](brand_name)
+    - Hãy liệt kê các dòng laptop hiện đang có sẵn từ [Dell](brand_name) .
+    - Các Laptop của hãng [MSI](brand_name)
+    - Tham khảo laptop của hãng (ASUS)(brand_name)
+    - Hãng [HP](brand_name) có những laptop nào
+    - Các Laptop của hãng [ASUS](brand_name)
+    - Laptop của [Lenovo](brand_name) bao gồm những mẫu nào?
+    - Các Laptop của hãng [Lenovo](brand_name)
+    - Các Laptop của nhãn hiệu [HP](brand_name)
+    - Cho tôi xem các Laptop của hãng [ASUS](brand_name)
+    - Có bao nhiêu phiên bản laptop của [Acer](brand_name) ?
+    - Laptop Gaming của [MSI](brand_name) bao gồm những dòng nào?
+    - Cho tôi xem danh sách laptop của hãng [DELL](brand_name)
+    - Tham khảo laptop của nhãn hiệu (ASUS)(brand_name)
+    - Cho tôi xem của hãng [Lenovo](brand_name)
+    - Hãng [MSI](brand_name) có những laptop nào
+    - Tham khảo laptop của nhãn hiệu [Lenovo](brand_name)
+    - Có những dòng laptop nào được cung cấp bởi [Acer](brand_name) ?
+    - Hãy liệt kê các dòng laptop từ [Microsoft](brand_name) .
+    - Cho tôi xem danh sách laptop của nhãn hiệu [Lenovo](brand_name)
+    - Cho tôi xem các Laptop của nhãn hiệu [ASUS](brand_name)
+    - Hãng [ASUS](brand_name) có những laptop nào
+    - Có bao nhiêu dòng laptop được cung cấp bởi [Dell](brand_name) ?
+    - Cho tôi xem của nhãn hiệu [Macbook](brand_name)
+    - Hãng [Dell](brand_name) có những laptop nào
+    - Danh sách laptop của hãng [ASUS](brand_name)
+    - Hãy liệt kê các dòng laptop Gaming từ [Acer](brand_name) .
+    - Hãy mô tả các dòng laptop từ [Dell](brand_name) .
+    - Có những dòng laptop nào thuộc dòng sản phẩm của [Microsoft](brand_name) ?
+    - Hãy mô tả các dòng laptop từ [Samsung](brand_name).
+    - Hãy liệt kê các dòng laptop của [Asus](brand_name) .
+    - Cho tôi xem danh sách laptop của hãng [Macbook](brand_name)
+    - nhãn hiệu [ASUS](brand_name) có những laptop nào
+    - nhãn hiệu [Macbook](brand_name) có những laptop nào
+    - Hãy mô tả các dòng laptop Gaming từ [Acer](brand_name) .
+    - Các Laptop của nhãn hiệu [ASUS](brand_name)
+    - Hãy liệt kê các dòng laptop của [Dell](brand_name) .
+    - Cho tôi xem danh sách của hãng (ASUS)(brand_name)
+    - Cho tôi xem các Laptop của nhãn hiệu [HP](brand_name)
+    - Có những dòng laptop nào thuộc dòng sản phẩm của [Microsoft](brand_name)?
+    - Hãng [Acer](brand_name) có những laptop nào
+    - Tham khảo laptop của hãng [Macbook](brand_name)
+    - Có những dòng laptop nào thuộc dòng sản phẩm của [Lenovo](brand_name) ?
+    - Các Laptop của hãng [Acer](brand_name)
+    - Laptop của [Acer](brand_name) bao gồm những mẫu nào?
+    - Laptop của [Apple](brand_name) có bao nhiêu phiên bản?
+    - Các Laptop của nhãn hiệu [Acer](brand_name)
+    - Hãy mô tả các dòng laptop Gaming của [MSI](brand_name).
+    - Cho tôi xem các Laptop của nhãn hiệu [Acer](brand_name)
+    - Các Laptop của hãng [HP](brand_name)
+    - Cho tôi xem các Laptop của hãng [MSI](brand_name)
+- intent: brands_info
+  examples: |
+    - Có laptop của Razer không?
+    - Tôi muốn biết ở đây bán các hãng laptop nào?
+    - Cửa hàng cung cấp các hãng máy tính từ những thương hiệu nào?
+    - Có laptop của Corsair không?
+    - Cửa hàng này cung cấp các dòng laptop nào?
+    - Có bán máy tính của Acer Predator không?
+    - Có sản phẩm máy tính của Toshiba không?
+    - Cửa hàng có bán sản phẩm của Asus không?
+    - Có bán máy tính của MainGear không?
+    - Tôi có thể mua laptop của những hãng nào tại đây?
+    - Ở đây bán những hãng laptop nào?
+    - Có laptop của Falcon Northwest không?
+    - Các hãng laptop đang được bán ở đây
+    - Có máy tính của ABS không?
+    - Có bán máy tính của Origin không?
+    - Có laptop của VAIO không?
+    - Có bán laptop của HP không?
+    - Có sản phẩm máy tính của AVADirect không?
+    - Có sản phẩm máy tính của Fujitsu không?
+    - Có máy tính của Zotac không?
+    - Có các sản phẩm máy tính của Dell không?
+    - Có bán laptop của Eurocom không?
+    - Có bán laptop của Razorblade không?
+    - Các hãng laptop mà cửa hàng bán?
+    - Có máy tính của HP Omen không?
+    - Có laptop của Huawei không?
+    - Có bán máy tính của Sony không?
+    - Có bao nhiêu hãng laptop đang được bán ở đây?
+    - Cửa hàng này bán laptop của những thương hiệu nào?
+    - Có các sản phẩm máy tính của Samsung không?
+    - Có bán máy tính của Google không?
+    - Có bán máy tính của Digital Storm không?
+    - Có bán máy tính của Xotic PC không?
+    - Có máy tính của Acer không?
+    - Cho tôi xem danh sách các hãng máy tính có sẵn tại đây?
+    - Có máy tính của Puget Systems không?
+    - Có máy tính của Lenovo không?
+    - Có những thương hiệu máy tính nào đang được ưa chuộng ở cửa hàng ?
+    - Có laptop của Aorus không?
+    - Có sản phẩm máy tính của Skytech Gaming không?
+    - Cửa hàng có bán máy tính của Apple không?
+    - Có máy tính của iBUYPOWER Snowblind không?
+    - Có laptop của ASUS ROG không?
+    - Cửa hàng này có các sản phẩm máy tính từ những nhãn hiệu nào?
+    - Cửa hàng này cung cấp các dòng laptop gì?
+    - Cửa hàng có thể cho tôi biết tất cả các nhãn hiệu laptop mà cửa hàng có không?
+    - Các hãng laptop đang bán?
+    - Có laptop của Digital Storm không?
+    - Tôi muốn biết cửa hàng đang bán laptop của hãng nào?
+    - Có sản phẩm máy tính của Xiaomi không?
+    - Có sản phẩm máy tính của SkyTech không?
+    - Có bán máy tính của MSI không?
+    - Có máy tính của Velocity Micro không?
+    - Có sản phẩm máy tính của MAINGEAR Vybe không?
+    - Có những hãng máy tính nào được bán tại cửa hàng?
+    - Có bán máy tính của Gigabyte không?
+    - Có máy tính của iBUYPOWER không?
+    - Có sản phẩm máy tính của Maingear không?
+    - Những hãng laptop nào phổ biến nhất tại cửa hàng?
+    - Có bán laptop của Microsoft không?
+    - Có bán máy tính của ABS Gladiator không?
+    - Cho tôi xem tất cả các hãng laptop
+    - Cửa hàng có những hãng laptop gì?
+- intent: affirm
+  examples: |
+    - quá chính xác
+    - Tôi đồng ý với bạn một cách tuyệt đối.
+    - có
+    - vâng chính xác
+    - Đúng, tôi đồng ý hoàn toàn.
+    - Vâng, tôi đồng ý với bạn một cách tuyệt đối.
+    - Tôi đồng ý và tôi cũng nghĩ vậy.
+    - rất đúng
+    - đúng rồi chị
+    - đúng đúng đúng
+    - Đúng, tôi chấp nhận.
+    - Đúng vậy, tôi đồng ý.
+    - Chính xác như vậy.
+    - Đúng vậy, tôi chấp nhận.
+    - Tôi đồng ý với ý kiến của bạn hoàn toàn.
+    - Tôi đồng ý với quan điểm của bạn.
+    - Vâng, tôi đồng ý với bạn.
+    - thank
+    - vâng đúng rồi
+    - Vâng, đúng như vậy.
+    - yes
+    - Tôi đồng ý và cũng nghĩ vậy.
+    - đúng
+    - Có, tôi đồng ý.
+    - đúng như vậy rồi đó
+    - dạ đúng rồi
+    - Vâng, tôi cũng nghĩ như vậy.
+    - quá đúng
+    - đúng rồi bot
+    - Vâng, tôi đồng tình.
+    - Vâng, đúng vậy.
+    - chính xác đó
+    - Tôi đồng ý.
+    - Tôi đồng ý và cũng chia sẻ quan điểm đó.
+    - Tôi đồng ý với bạn và cũng đồng cảm với quan điểm đó.
+    - Vâng, tôi đồng ý với điều đó.
+    - đúng rồi anh
+    - thank u
+    - Vâng, tôi đồng ý với bạn hoàn toàn.
+    - Tôi đồng ý và cũng tán thành với bạn.
+    - thanks
+    - thank you
+    - đúng rồi em
+    - Tôi đồng ý và cũng ủng hộ quan điểm của bạn.
+    - Tôi đồng ý hoàn toàn.
+    - cám ơn bạn
+    - Tôi đồng ý và cũng hiểu rõ vấn đề đó.
+    - thankyou
+    - Đúng, tôi hoàn toàn đồng ý với bạn.
+    - Tôi hiểu và đồng ý.
+    - đúng rồi bạn
+    - Tôi đồng ý với ý kiến của bạn một cách tuyệt đối.
+    - Có, tôi đồng ý với bạn.
+    - đúng vậy
+    - Đúng vậy.
+    - Tôi đồng ý, điều đó nghe có vẻ hợp lý.
+    - dạ vâng
+    - chính xác
+    - Tôi tán thành với bạn.
+    - vâng
+    - chính xác đó bạn
+    - Tôi đồng ý với bạn về điều đó.
+    - Đúng, tôi tin tưởng vào điều đó.
+    - đúng rồi
+    - cám ơn
+    
+
+- intent: greet
+  examples: |
+    - shop ơi
+    - Hi there!
+    - Giúp đỡ tôi
+    - chào
+    - Hey, tôi đến đây với một số vấn đề cần giải quyết.
+    - Hey, tôi muốn trò chuyện với bạn.
+    - Chào, bạn có thể giúp tôi không?
+    - có đó không?
+    - Xin chào, tôi muốn hỏi một điều.
+    - Hello!
+    - start
+    - chào bạn bot
+    - rảnh không?
+    - Xin chào, bạn có thể hỗ trợ tôi không?
+    - Hello, tôi cần một số giải đáp cho một vài câu hỏi.
+    - tôi có thắc mắc
+    - Xin chào, tôi cần giúp đỡ về một vấn đề.
+    - Chào, tôi cần một số thông tin từ bạn.
+    - Xin giải đáp thắc mắc
+    - Xin chào, tôi mong muốn có một cuộc trò chuyện với bạn.
+    - Chào bạn!
+    - Xin chào!
+    - ê
+    - tôi có vấn đề cần giúp đỡ
+    - hú
+    - bot ơi
+    - Xin chào, tôi cần một số thông tin.
+    - Xin chào, tôi đến đây để nhận trợ giúp.
+    - Alo!
+    - cho mình hỏi
+    - chào buổi tối
+    - Hello, tôi cần một chút thông tin.
+    - Hey!
+    - Xin chào, tôi có một số câu hỏi.
+    - bạn gì ơi
+    - Hello, tôi cần một ít thông tin.
+    - ai đó giúp tôi với
+    - Xin chào, tôi có một số câu hỏi muốn đặt cho bạn.
+    - xin chào
+    - Chào bạn, có gì mới không?
+    - Xin chào, tôi đến đây để nhận sự giúp đỡ của bạn.
+    - /start
+    - Hello, tôi đến đây với một vài câu hỏi.
+    - Xin chào, tôi có thể được giúp gì không?
+    - Chào, bạn có thể giúp tôi được không?
+    - Chào bạn, bạn đã sẵn lòng trò chuyện với tôi chưa?
+    - chào bên kia
+    - em ơi
+    - có đây không?
+    - Xin chào, bạn có thể làm ơn giúp tôi không?
+    - giúp đỡ tôi
+    - hey
+    - Tôi có một thắc mắc là
+    - Chào cả nhà!
+    - Chào, tôi muốn trò chuyện với ai đó.
+    - Hey, bạn có thể trợ giúp tôi không?
+    - có ai ở đây không?
+    - này
+    - Xin chào, có ai ở đó muốn trò chuyện với tôi không?
+    - Tôi cần giúp đỡ
+    - Xin chào, có ai ở đây muốn trò chuyện với tôi không?
+    - Hello, tôi đã đến đây với một số câu hỏi.
+    - help
+    - Xin chào ạ
+    - cho hỏi
+    - chào bot
+    - tôi cần giúp đỡ
+    - Hiện đây có ai đó không?
+    - Xin chào, có ai sẵn sàng trò chuyện không?
+    - Chào, bạn có thể hỗ trợ tôi được không?
+    - chào shop
+- intent: warranty_police
+  examples: |
+    - Bảo hành có giới hạn về khoảng cách địa lý không?
+    - Chính sách bảo hành có áp dụng cho việc sửa chữa tại các trung tâm dịch vụ bên ngoài không?
+    - Có chế độ bảo hành đặc biệt cho các sản phẩm cao cấp không?
+    - Chính sách bảo hành có thay đổi theo thời gian không?
+    - Cho tôi thông tin về chính sách bảo hành
+    - Thông tin bảo hành như nào
+    - Chính sách bảo hành
+    - Bảo hành có mục đích bảo vệ khách hàng khỏi lỗi sản phẩm không?
+    - Thông tin về Chính sách bảo hành
+    - Chính sách bảo hành trong trường hợp rơi vỡ của laptop X
+    - Sản phẩm đã qua sửa chữa có được bảo hành lại không?
+    - Laptop X bảo hành trong bao lâu
+    - Bảo hành có áp dụng cho việc sử dụng sản phẩm trong môi trường công nghiệp không?
+    - Sự cố phát sinh sau thời gian bảo hành sẽ được giải quyết như thế nào?
+    - Chính sách bảo hành của laptop X có áp dụng cho tất cả các lỗi
+    - Sự cố phát sinh khi sử dụng trong điều kiện bất thường được bảo hành không?
+    - Tôi muốn biết về chính sách bảo hành của laptop
+    - Có thể đổi sản phẩm khác thay vì sửa chữa không?
+    - Có cam kết về việc cung cấp linh kiện thay thế chính hãng không?
+    - Sản phẩm được bảo hành theo tiêu chuẩn quốc tế không?
+    - Laptop X có chính sách bảo hành như thế nào?
+    - em có bảo hành không
+    - máy em bị hư màn hình, có bảo hành không ạ
+    - anh muốn mang laptop đi bảo hành
+    - máy chị bị hỏng, chị muốn bảo hành
+    - Laptop X lỗi phần mềm có bảo hành không?
+    - Chính sách bảo hành của cửa hàng như thế nào
+    - Tôi muốn biết về chính sách bảo hành
+    - Có bảo hành đổi mới ngay lập tức không?
+    - Có thông tin bảo hành không
+    - Sản phẩm có bảo hành không
+    - Kiểm tra chính sách bảo hành của laptop X
+    - Bảo hành áp dụng cho việc sửa chữa ở các quốc gia khác không?
+    - Có giới hạn về số lần sửa chữa trong thời gian bảo hành không?
+    - Sản phẩm được bảo hành tại đâu?
+    - Có thể tự thực hiện việc sửa chữa nhỏ không?
+    - bảo hành như thế nào vậy
+    - Chính sách bảo hành như thế nào
+    - Cho tôi biết thông tin bảo hành
+    - Thủ tục để yêu cầu bảo hành là gì?
+    - Bảo hành có áp dụng cho tất cả các cửa hàng của công ty không?
+    - Sự cố nào được coi là hỏng hóc được bảo hành?
+    - Có điều kiện cụ thể nào để hưởng chính sách bảo hành không?
+    - Bảo hành có áp dụng cho các phụ kiện kèm theo không?
+    - Cần phải liên hệ với ai nếu tôi gặp vấn đề về chính sách bảo hành của laptop X
+    - Chính sách bảo hành của cửa hàng ra làm sao
+    - anh muốn bảo hành laptop của anh
+    - Có dịch vụ đổi trả hàng không hài lòng trong thời gian bảo hành không?
+    - anh muốn bảo hành laptop
+    - cho em xin thông tin bảo hành
+    - Có cần phải đăng ký sản phẩm để hưởng chính sách bảo hành không?
+    - Thông tin bảo hành như thế nào
+    - Cần phải xuất trình hóa đơn mua hàng để hưởng bảo hành không?
+    - Bảo hành có áp dụng cho tất cả các sản phẩm không?
+    - Bảo hành có áp dụng cho các sự cố do thiên tai không?
+    - Bảo hành có áp dụng cho các sản phẩm đã qua sử dụng không?
+    - Bảo hành có áp dụng cho các linh kiện phụ trợ không?
+    - kiểm tra thời gian bảo hành còn lại của laptop X
+    - Có bảo hành mở rộng nào có sẵn không?
+    - Có thể mua gói mở rộng bảo hành không?
+    - bên em có bảo hành không
+    - Có bảo hành không
+    - Bảo hành áp dụng cho phần mềm của sản phẩm không?
+    - Chính sách bảo hành của laptop X có bao gồm đổi trả
+    - Cho tôi biết chính sách bảo hành
+    - Việc đổi sản phẩm trong chính sách bảo hành của laptop X
+    - Có cam kết về thời gian sửa chữa không?
+    - Thời gian bảo hành bao lâu?
+    - có bảo hành sản phẩm này không
+    - Có dịch vụ đổi mới sản phẩm trong thời gian bảo hành không?
+- intent: promotion
+  examples: |
+    - bên shop đang có chương trình khuyến mãi nào vậy ạ
+    - bên em có đang khuyến mãi gì không?
+    - Hãy cho tôi biết thông tin về các chương trình khuyến mãi tại cửa hàng
+    - bên shop đang có khuyến mãi gì vậy?
+    - Có chương trình đổi điểm thưởng không?
+    - Có chương trình giảm giá cho việc mua sắm vào thời gian cố định trong năm không?
+    - Có những chương trình khuyến mãi nào tại cửa hàng?
+    - Có các gói quà tặng dành cho việc mua sắm vào các dịp lễ không?
+    - bán laptop mà có ưu đãi không?
+    - shop đang có ưu đãi gì?
+    - cho xem các khuyến mãi
+    - Có mã giảm giá nào đang được áp dụng không?
+    - Sản phẩm khuyến mãi
+    - Cung cấp cho tôi thông tin về các ưu đãi khi mua hàng
+    - Hãy cho tôi biết thông tin về các ưu đãi khi mua hàng
+    - Có các gói quà tặng dành cho việc mua sắm vào thời gian cố định trong ngày không?
+    - Cửa hàng đang có những chương trình khuyến mãi cho sản phẩm nào?
+    - shop có đang khuyến mãi gì không?
+    - Chương trình khuyến mãi đang diễn ra đến khi nào?
+    - Có các gói quà tặng dành cho việc mua sắm vào thứ Bảy hoặc Chủ nhật không?
+    - Có chương trình cashback nào đang diễn ra không?
+    - Cung cấp cho tôi thông tin về các chương trình khuyến mãi khi mua hàng
+    - Có chương trình khuyến mãi dành riêng cho người dùng ứng dụng di động không?
+    - Có chương trình khuyến mãi cho việc mua hàng trực tuyến vào ngày mua sắm trực tuyến không?
+    - Chương trình khuyến mãi có áp dụng cho tất cả các sản phẩm không?
+    - Có điều kiện đặc biệt nào áp dụng cho chương trình không?
+    - Có ưu đãi cho việc mua hàng vào các ngày lễ không?
+    - Có các gói quà tặng dành cho việc mua sắm vào thời gian cố định trong tháng không?
+    - bên em đang có các ưu đãi gì?
+    - Có các gói quà tặng dành cho dịp kỷ niệm không?
+    - Các chương trình khuyến mãi
+    - Cho xem các ưu đãi bên shop đang có
+    - cho mình xem các khuyến mãi đi
+    - bên em có chương trình khuyến mãi nào không
+    - Có giảm giá cho việc mua hàng định kỳ không?
+    - Có các gói quà tặng dành cho việc mua sắm vào các ngày đặc biệt trong tuần không?
+    - Có các gói khuyến mãi cho mùa lễ hội không?
+    - Có ưu đãi đặc biệt cho việc mua sắm từ ứng dụng di động vào các ngày đặc biệt trong năm không?
+    - Có các ưu đãi cho việc mua hàng sớm không?
+    - laptop đang khuyến mãi
+    - cho tôi xem các mẫu laptop đang khuyến mãi đi
+    - Các sản phẩm laptop nào đang có ưu đãi
+    - Cửa hàng đang triển khai chương trình khuyến mãi nào trong thời gian này?
+    - Có ưu đãi cho việc mua hàng tại cửa hàng trực tiếp không?
+    - Có các ưu đãi đặc biệt cho việc mua sắm vào các ngày đặc biệt trong năm không?
+    - Có chính sách giảm giá cho việc mua sắm vào các ngày nghỉ lễ không?
+    - Các sản phẩm laptop đang được khuyến mãi
+    - Tôi muốn biết hiện tại có chương trình khuyến mãi nào không
+    - Tôi muốn biết sản phẩm nào đang được khuyến mãi
+    - em muốn biết các chương trình khuyến mãi
+    - Có ưu đãi đặc biệt cho việc mua sắm từ ứng dụng di động vào giờ cao điểm không?
+    - Có chương trình đổi cũ lấy mới không?
+    - Điều kiện để được hưởng chương trình khuyến mãi là gì?
+    - Có ưu đãi đặc biệt nào cho khách hàng mới không?
+    - Có các gói quà tặng dành cho ngày sinh nhật không?
+    - Có các gói quà tặng dành cho việc mua sắm trong các buổi tối không?
+    - Có ưu đãi cho việc mua hàng từ các kênh truyền thông xã hội không?
+    - Có chương trình khuyến mãi nào không
+    - Có chính sách giảm giá cho việc mua sắm vào thứ Hai hoặc Thứ Ba không?
+    - bên em có đang ưu đãi gì không?
+    - Đang có những chương trình khuyến mãi nào ở cửa hàng?
+    - Có ưu đãi đặc biệt cho việc mua sắm từ website của cửa hàng không?
+    - Có chính sách giảm giá cho sinh viên không?
+    - Chương trình giảm giá áp dụng cho sản phẩm nào?
+    - Có các gói quà tặng dành cho khách hàng thường xuyên không?
+    - Có các gói dịch vụ bảo trì đặc biệt không?
+    - Có quà tặng kèm theo khi mua hàng không?
+    - Có khuyến mãi gì
+    - Hiện tại cửa hàng có tổ chức chương trình khuyến mãi nào không?
+    - Các sản phẩm laptop đang được giảm mạnh
+    - Có ưu đãi đặc biệt cho khách hàng mua hàng lần thứ n không?
+    - Đang có khuyến mãi gì
+    - Các sản phẩm laptop nào đang được giảm giá
+    - bán laptop mà có ưu đãi gì không vậy?
+- intent: laptop_info
+  examples: |
+    - Laptop [Acer Aspire](laptop_name) có cổng kết nối USB-C không?
+    - Thông tin về CPU của laptop [MSI Modern 15](laptop_name)?
+    - Laptop [LG UltraGear 17](laptop_name) có màn hình chống lóa không?
+    - Laptop [ASUS ROG Zephyrus](laptop_name) có màn hình chuyên gaming không?
+    - Thông tin về laptop [Acer Nitro 5](laptop_name)?
+    - Laptop [Acer Nitro 5](laptop_name)
+    - Cung cấp thông tin về giá của laptop [Asus Vivobook 14](laptop_name)
+    - Laptop [Razer Blade Stealth](laptop_name) có màn hình 4K không?
+    - Laptop [Microsoft Surface Laptop 3](laptop_name) có bộ nhớ RAM lớn không?
+    - Laptop [HP Envy x360](laptop_name) có màn hình cảm ứng Full HD không?
+    - Laptop [VAIO SX14](laptop_name) có bộ xử lý Intel Core i7 không?
+    - Laptop [Toshiba Portégé](laptop_name) có thiết kế mỏng nhẹ không?
+    - Tôi đang quan tâm về laptop [MSI Modern 15](laptop_name)
+    - Laptop [Samsung Notebook 9 Pro](laptop_name) có thiết kế bền bỉ không?
+    - Laptop [Dell Latitude 7400](laptop_name) có thời lượng pin dài không?
+    - Laptop [LG UltraGear](laptop_name) có tần số làm mới màn hình cao không?
+    - Có bán laptop [MSI Modern 15](laptop_name) không?
+    - Có bán laptop [Acer Nitro 5](laptop_name) không?
+    - Laptop [Sony VAIO](laptop_name) có màn hình hiển thị loại gì?
+    - Laptop [HP Pavilion](laptop_name) có màn hình kích thước bao nhiêu inch?
+    - Laptop [VAIO SX14](laptop_name) có bàn phím có đèn nền không?
+    - Laptop [MSI Modern 15](laptop_name)
+    - Laptop [Sony VAIO SX12](laptop_name) có khả năng bảo mật vân tay không?
+    - Tôi muốn mua laptop [Macbook Pro](laptop_name)
+    - Laptop [Acer Swift](laptop_name) có thời lượng pin kéo dài bao nhiêu giờ?
+    - Cấu hình của laptop [Macbook Pro 14 M1 Pro](laptop_name)
+    - Laptop [Samsung Notebook Odyssey](laptop_name) có tính năng âm thanh vòm không?
+    - Laptop [Alienware m15](laptop_name) có card đồ họa NVIDIA GeForce RTX không?
+    - Có laptop [MSI GS66 1234](laptop_name) không?
+    - Tôi muốn biết về Laptop [Asus Vivobook 15](laptop_name)
+    - Laptop [Acer Aspire 5](laptop_name) có màn hình IPS Full HD không?
+    - Mua laptop [Asus Vivobook 15](laptop_name)
+    - Có laptop [MSI GS66](laptop_name) không?
+    - Tôi muốn mua laptop [Dell Inspiron 14 1234](laptop_name)
+    - Laptop [LG Gram](laptop_name) có cân nặng như thế nào?
+    - Có laptop [Acer Nitro 5](laptop_name) không?
+    - Có bán laptop [Macbook Pro 16](laptop_name) không?
+    - Laptop [Google Pixelbook](laptop_name) có tính năng đặc biệt gì về hệ điều hành?
+    - Laptop [MSI Stealth](laptop_name) có card đồ họa tích hợp là gì?
+    - Hãy cho tôi biết thông tin về laptop [MSI Bravo 15](laptop_name)
+    - Laptop [Lenovo Yoga](laptop_name) có tính năng màn hình cảm ứng xoay 360 độ không?
+    - Laptop [MSI Prestige 14](laptop_name) có trọng lượng nhẹ không?
+    - Tôi đang quan tâm về laptop [Asus Vivobook 14 1234](laptop_name)
+    - Laptop [Acer Predator](laptop_name) có tính năng chống lóa màn hình không?
+    - Laptop [Fujitsu Lifebook U](laptop_name) có thiết kế chống bụi không?
+    - Laptop [Huawei MateBook](laptop_name) có cổng kết nối nào?
+    - Laptop [Dell XPS](laptop_name) có bộ vi xử lý loại gì?
+    - Laptop [Dell Inspiron 15 1234](laptop_name)
+    - Thông tin về laptop [Macbook Air 15](laptop_name)?
+    - Laptop [Lenovo ThinkPad](laptop_name) có khả năng chống nước không?
+    - Hãy cho tôi biết thông tin về CPU của laptop [Asus Vivobook 15](laptop_name)
+    - Laptop [Gigabyte Aero 15](laptop_name) có tính năng làm mát tản nhiệt hiệu quả không?
+    - Ở đây có bán Laptop [Macbook Pro 16 M2 Pro Max](laptop_name) không?
+    - Cung cấp thông tin về laptop [MSI Bravo 15](laptop_name)
+    - Hãy cho tôi biết thông tin về laptop [Dell Vostro 15 7856](laptop_name)
+    - Cấu hình của laptop [MSI Bravo 15](laptop_name)
+    - Laptop [Xiaomi Mi Notebook](laptop_name) có thiết kế mỏng nhẹ như thế nào?
+    - Laptop [ASUS ZenBook](laptop_name) có tính năng bảo mật nào?
+    - Laptop [Microsoft Surface](laptop_name) có màu sắc và kiểu dáng như thế nào?
+    - Cung cấp thông tin về laptop [Macbook Air 15 M2](laptop_name)
+    - Thông tin về Laptop [Dell Inspiron 14 5678](laptop_name)
+    - Cung cấp thông tin về card đồ họa của laptop [MSI Modern 14](laptop_name)
+    - Ở đây có bán Laptop [Dell Inspiron 15 1234](laptop_name) không?
+    - Tôi muốn mua laptop [MSI GS66](laptop_name)
+    - Laptop [MSI Prestige](laptop_name) có màn hình hiển thị IPS không?
+    - Laptop [Acer Predator Triton](laptop_name) có bộ xử lý AMD Ryzen không?
+    - Laptop [Razer Blade](laptop_name) có tính năng làm mát nhanh chóng không?
+    - Cung cấp cho tôi thông tin về laptop [Dell XPS 15](laptop_name)
+    - Laptop [Lenovo Yoga C930](laptop_name) có bảo mật webcam không?
+    - Mua laptop [MSI Modern 14](laptop_name)
+    - Tôi muốn mua laptop [Macbook Pro 16 M1 Max](laptop_name)
+    - Laptop [Google Pixelbook Go](laptop_name) có pin sạc nhanh không?
+    - Laptop [Huawei MateBook X Pro](laptop_name) có màu sắc độc đáo không?

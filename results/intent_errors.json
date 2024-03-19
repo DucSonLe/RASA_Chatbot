@@ -1,0 +1,130 @@
+[
+  {
+    "text": "bạn có phải là Bot không?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7793675661087036
+    }
+  },
+  {
+    "text": "Tôi không đồng ý với bạn về điều đó.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Tôi không đồng ý với điều đó.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5998136401176453
+    }
+  },
+  {
+    "text": "Tôi không đồng ý hoặc đồng cảm.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.852187991142273
+    }
+  },
+  {
+    "text": "Có dịch vụ hỗ trợ trực tuyến 24/7 không?",
+    "intent": "information",
+    "intent_prediction": {
+      "name": "laptop_info",
+      "confidence": 0.9830195307731628
+    }
+  },
+  {
+    "text": "tôi muốn nhận máy thì làm như thế nào",
+    "intent": "delivery",
+    "intent_prediction": {
+      "name": "payment_method",
+      "confidence": 0.758497953414917
+    }
+  },
+  {
+    "text": "Cảm ơn và xin chào!",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "biến",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "brands_info",
+      "confidence": 0.9995121955871582
+    }
+  },
+  {
+    "text": "Các hãng laptop?",
+    "intent": "brands_info",
+    "intent_prediction": {
+      "name": "laptop_of_brand",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Cửa hàng có những hãng laptop nào?",
+    "intent": "brands_info",
+    "intent_prediction": {
+      "name": "laptop_of_brand",
+      "confidence": 0.9265625476837158
+    }
+  },
+  {
+    "text": "Cho tôi xem toàn bộ các hãng laptop",
+    "intent": "brands_info",
+    "intent_prediction": {
+      "name": "laptop_of_brand",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Có laptop của Lenovo Legion không?",
+    "intent": "brands_info",
+    "intent_prediction": {
+      "name": "laptop_of_brand",
+      "confidence": 0.9999985694885254
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9999985694885254
+    }
+  },
+  {
+    "text": "Có mất phí nào cho việc giao nhận sản phẩm khi sửa chữa không?",
+    "intent": "warranty_police",
+    "intent_prediction": {
+      "name": "delivery",
+      "confidence": 0.9978367686271667
+    }
+  },
+  {
+    "text": "Có chương trình trả góp với lãi suất 0% không?",
+    "intent": "promotion",
+    "intent_prediction": {
+      "name": "laptop_info",
+      "confidence": 0.9792739152908325
+    }
+  }
+]

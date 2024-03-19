@@ -43,6 +43,7 @@ class ActionGreet(Action):
         return "action_greet"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print('hello')
         dispatcher.utter_message(response="utter_greet")
         return []
 
@@ -118,54 +119,9 @@ class ActionGetWarrantyPolice(Action):
     async def run(
             self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
-        data = 'Hỗ trợ trả bảo hành tận nơi tại Tp.HCM và tại trung tâm các tỉnh/Tp khác./nCam kết bảo hành trong 12 tháng/nĐể biết thêm thông tin chi tiết, bạn vui lòng truy cập vào link dưới đây/n/nhttps://www.google.com/'
+        data = 'Hỗ trợ trả bảo hành tận nơi tại Tp.HCM và tại trung tâm các tỉnh/Tp khác.\nCam kết bảo hành trong 12 tháng\nĐể biết thêm thông tin chi tiết, bạn vui lòng truy cập vào link dưới đây\n\nhttps://www.google.com/'
         dispatcher.utter_message(response="utter_warranty_police", data=data)
         return []
-
-
-class ActionGetLaptopPriceUnder(Action):
-    def name(self) -> Text:
-        return "action_get_laptop_price_under"
-
-    async def run(
-            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
-    ) -> List[Dict[Text, Any]]:
-        laptop_under = next(tracker.get_latest_entity_values("laptop_under"), None)
-        laptop_name = 'PRICE UNDER'
-        return [SlotSet("laptop_name", laptop_name), SlotSet("laptop_under", laptop_under)]
-
-
-class ActionGetLaptopForStudying(Action):
-    def name(self) -> Text:
-        return "action_get_laptop_for_studying"
-
-    async def run(
-            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
-    ) -> List[Dict[Text, Any]]:
-        data = ['Laptop DELL', 'Laptop MSI', 'Laptop ASUS']
-        dispatcher.utter_message(response="utter_laptop_for_studying", data=data)
-
-
-class ActionGetLaptopForGaming(Action):
-    def name(self) -> Text:
-        return "action_get_laptop_for_gaming"
-
-    async def run(
-            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
-    ) -> List[Dict[Text, Any]]:
-        data = ['Laptop ASUS', 'Laptop MSI']
-        dispatcher.utter_message(response="utter_laptop_for_gaming", data=data)
-
-
-class ActionGetLaptopForWorking(Action):
-    def name(self) -> Text:
-        return "action_get_laptop_for_working"
-
-    async def run(
-            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
-    ) -> List[Dict[Text, Any]]:
-        data = ['Laptop MSI', 'Macbook Pro', 'Macbook Air']
-        dispatcher.utter_message(response="utter_laptop_for_working", data=data)
 
 
 class ActionGetLaptopOfBrand(Action):
@@ -197,18 +153,6 @@ class ActionGetLaptopOfBrand(Action):
             SlotSet("brand_name", result[1][0])
             dispatcher.utter_message(response="utter_laptops_brand_result", data=data_list)
 
-        return []
-
-
-class ActionGetPaymentMethod(Action):
-    def name(self) -> Text:
-        return "action_get_payment_method"
-
-    async def run(
-            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
-    ) -> List[Dict[Text, Any]]:
-        data_list = ['- Tiền mặt', '- Ví điện tử', '- Thẻ tín dụng', '- Internet banking']
-        dispatcher.utter_message(response="utter_payment_result", data='\n'.join(data_list))
         return []
 
 

@@ -1,0 +1,49 @@
+{
+  "customer_gender": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "laptop_name": {
+    "precision": 0.9310344827586207,
+    "recall": 1.0,
+    "f1-score": 0.9642857142857143,
+    "support": 54,
+    "confused_with": {}
+  },
+  "brand_name": {
+    "precision": 0.9333333333333333,
+    "recall": 1.0,
+    "f1-score": 0.9655172413793104,
+    "support": 14,
+    "confused_with": {}
+  },
+  "customer_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9397590361445783,
+    "recall": 1.0,
+    "f1-score": 0.9689440993788819,
+    "support": 78
+  },
+  "macro avg": {
+    "precision": 0.9660919540229884,
+    "recall": 1.0,
+    "f1-score": 0.9824507389162562,
+    "support": 78
+  },
+  "weighted avg": {
+    "precision": 0.9402888299440024,
+    "recall": 1.0,
+    "f1-score": 0.9690855121889604,
+    "support": 78
+  },
+  "accuracy": 0.9970202622169249
+}

@@ -1,0 +1,136 @@
+[
+  {
+    "text": "Laptop MacBook của Apple có bao nhiêu phiên bản?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "Apple",
+        "entity": "brand_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "brand_name",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.9989857077598572,
+        "value": "Macbook",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "brand_name",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.9992843270301819,
+        "value": "Apple",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Laptop ZenBook của Asus bao gồm những mẫu nào?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 23,
+        "value": "Asus",
+        "entity": "brand_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "laptop_name",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.9680436253547668,
+        "value": "ZenBook",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "brand_name",
+        "start": 19,
+        "end": 23,
+        "confidence_entity": 0.9982795715332031,
+        "value": "Asus",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Có laptop của Lenovo Legion không?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "laptop_name",
+        "start": 14,
+        "end": 20,
+        "confidence_entity": 0.8182820081710815,
+        "value": "Lenovo",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Laptop ASUS ROG Zephyrus G14 có card đồ họa AMD Radeon không?",
+    "entities": [
+      {
+        "start": 7,
+        "end": 28,
+        "value": "ASUS ROG Zephyrus G14",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "laptop_name",
+        "start": 7,
+        "end": 28,
+        "confidence_entity": 0.6721122860908508,
+        "value": "ASUS ROG Zephyrus G14",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "laptop_name",
+        "start": 48,
+        "end": 54,
+        "confidence_entity": 0.8325482606887817,
+        "value": "Radeon",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Laptop Microsoft Surface Laptop có bộ nhớ SSD tốc độ cao không?",
+    "entities": [
+      {
+        "start": 7,
+        "end": 24,
+        "value": "Microsoft Surface",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "laptop_name",
+        "start": 7,
+        "end": 31,
+        "confidence_entity": 0.9539774656295776,
+        "value": "Microsoft Surface Laptop",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

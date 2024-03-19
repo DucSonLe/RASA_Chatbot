@@ -1,0 +1,145 @@
+{
+  "delivery": {
+    "precision": 0.9230769230769231,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.9230769230769231,
+    "support": 13,
+    "confused_with": {
+      "payment_method": 1
+    }
+  },
+  "laptop_of_brand": {
+    "precision": 0.7777777777777778,
+    "recall": 1.0,
+    "f1-score": 0.8750000000000001,
+    "support": 14,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 14,
+    "confused_with": {
+      "greet": 1,
+      "brands_info": 1
+    }
+  },
+  "brands_info": {
+    "precision": 0.9230769230769231,
+    "recall": 0.75,
+    "f1-score": 0.8275862068965517,
+    "support": 16,
+    "confused_with": {
+      "laptop_of_brand": 4
+    }
+  },
+  "laptop_info": {
+    "precision": 0.9047619047619048,
+    "recall": 1.0,
+    "f1-score": 0.9500000000000001,
+    "support": 19,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 0.9444444444444444,
+    "recall": 1.0,
+    "f1-score": 0.9714285714285714,
+    "support": 17,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.8,
+    "recall": 0.9411764705882353,
+    "f1-score": 0.8648648648648648,
+    "support": 17,
+    "confused_with": {
+      "deny": 1
+    }
+  },
+  "promotion": {
+    "precision": 1.0,
+    "recall": 0.9444444444444444,
+    "f1-score": 0.9714285714285714,
+    "support": 18,
+    "confused_with": {
+      "laptop_info": 1
+    }
+  },
+  "give_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "information": {
+    "precision": 1.0,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9565217391304348,
+    "support": 12,
+    "confused_with": {
+      "laptop_info": 1
+    }
+  },
+  "warranty_police": {
+    "precision": 1.0,
+    "recall": 0.9444444444444444,
+    "f1-score": 0.9714285714285714,
+    "support": 18,
+    "confused_with": {
+      "delivery": 1
+    }
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {
+      "deny": 1
+    }
+  },
+  "complain": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "payment_method": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 10,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 0.8,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.7272727272727272,
+    "support": 12,
+    "confused_with": {
+      "affirm": 4
+    }
+  },
+  "accuracy": 0.9191919191919192,
+  "macro avg": {
+    "precision": 0.9321485921485922,
+    "recall": 0.8962412315353491,
+    "f1-score": 0.9053821811767838,
+    "support": 198
+  },
+  "weighted avg": {
+    "precision": 0.9252275782578813,
+    "recall": 0.9191919191919192,
+    "f1-score": 0.917755301393028,
+    "support": 198
+  },
+  "micro avg": {
+    "precision": 0.9191919191919192,
+    "recall": 0.9191919191919192,
+    "f1-score": 0.9191919191919192,
+    "support": 198
+  }
+}

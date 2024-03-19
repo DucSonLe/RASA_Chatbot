@@ -47,27 +47,6 @@ stories:
     - intent: warranty_police
     - action: action_get_warranty_police
 
-- story: List Laptop với giá (dưới)
-  steps:
-    - intent: laptop_with_price_under
-    - action: action_get_laptop_price_under
-    - action: utter_give_laptop
-
-- story: Gợi ý laptop (Học tập)
-  steps:
-    - intent: demand_laptop_for_studying
-    - action: action_get_laptop_for_studying
-
-- story: Gợi ý laptop (Chơi game)
-  steps:
-    - intent: demand_laptop_for_gaming
-    - action: action_get_laptop_for_gaming
-
-- story: Gợi ý laptop (Làm việc)
-  steps:
-    - intent: demand_laptop_for_working
-    - action: action_get_laptop_for_working
-
 - story: Phàn nàn
   steps:
     - intent: complain
@@ -76,7 +55,7 @@ stories:
 - story: Phương thức thanh toán
   steps:
     - intent: payment_method
-    - action: action_get_payment_method
+    - action: utter_payment_result
 
 - story: Phương thức vận chuyển
   steps:
