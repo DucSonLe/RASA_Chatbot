@@ -168,6 +168,38 @@ class ActionInformation(Action):
         return []
 
 
+class ActionGetLaptopWithPrice(Action):
+    def name(self) -> Text:
+        return "action_get_laptop_with_price"
+
+    async def run(
+            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+        global name_lap
+        price_under = next(tracker.get_latest_entity_values("price_under"), None)
+        print(price_under)
+        price = float(price_under) * 1000000 if price_under is not None else 0.
+        db_manager = DatabaseManager()
+        db_manager.connect()
+
+        result = db_manager.execute_query("SELECT * FROM laptop "
+                                          "WHERE price <= '{}'".format(price))
+
+        db_manager.disconnect()
+
+        if result is None or len(result) == 0:
+            dispatcher.utter_message(response="utter_not_found")
+        else:
+
+            # data_list = [f"- {''.join(str(info) for info in data)}" for index, data in
+            #              enumerate(result)]
+            template = "- Tên: {}\n  Giá tiền: {}\n\n"
+            data_list = ''.join([template.format(item[1], "{:,}".format(item[2])) for item in result])
+
+            SlotSet("brand_name", result[1][0])
+            dispatcher.utter_message(response="utter_laptops_brand_result", data=data_list)
+
+
 class ActionFallback(Action):
     def name(self) -> Text:
         return "action_fallback"

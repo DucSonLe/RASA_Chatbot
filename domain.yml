@@ -13,6 +13,7 @@ intents:
   - promotion
   - laptop_info
   - laptop_of_brand
+  - find_with_price
   - payment_method
   - delivery
   - information
@@ -25,7 +26,6 @@ entities:
   - laptop_name
   - laptop_under
   - price_under
-  - price_above
   - warranty_police
 
 slots:
@@ -61,10 +61,6 @@ slots:
     type: text
     mappings:
       - type: custom
-  price_above:
-    type: text
-    mappings:
-      - type: custom
 
 responses:
   utter_greet:
@@ -78,8 +74,6 @@ responses:
     - text: "Xin chào! Tôi là bot hỗ trợ tự động, làm thế nào tôi có thể phục vụ bạn hôm nay?"
 
   utter_greet_with_name:
-    - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
-    - text: "Xin chào {customer_gender} {customer_name}. Tôi có thể giúp gì được ạ?"
     - text: "Xin chào. Tôi có thể giúp gì được cho {customer_gender} {customer_name} ạ?"
 
   utter_goodbye:
@@ -147,6 +141,7 @@ actions:
   - action_get_laptop_name
   - action_get_warranty_police
   - action_get_laptop_of_brand
+  - action_get_laptop_with_price
   - action_noted_complain
   - action_information
   - action_fallback

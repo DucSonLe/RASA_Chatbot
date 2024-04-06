@@ -37,6 +37,11 @@ stories:
     - intent: laptop_info
     - action: action_get_laptop_name
 
+- story: Hỏi Giá Laptop
+  steps:
+    - intent: find_with_price
+    - action: action_get_laptop_with_price
+
 - story: Hỏi về ưu đãi khuyến mãi
   steps:
     - intent: promotion

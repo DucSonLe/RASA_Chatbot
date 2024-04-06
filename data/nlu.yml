@@ -660,6 +660,9 @@ nlu:
     - Có bảo hành mở rộng nào có sẵn không?
     - Có thể mua gói mở rộng bảo hành không?
     - bên em có bảo hành không
+    - cửa hàng có chính sách bảo hành không
+    - Tôi muốn biết về thông tin bảo hành
+    - Tôi muốn biết về chính sách bảo hành
     - Có bảo hành không
     - Bảo hành áp dụng cho phần mềm của sản phẩm không?
     - Chính sách bảo hành của laptop X có bao gồm đổi trả
@@ -671,6 +674,8 @@ nlu:
     - Có dịch vụ đổi mới sản phẩm trong thời gian bảo hành không?
 - intent: promotion
   examples: |
+    - cửa hàng có đang ưu đãi gì không?
+    - khuyến mãi đang có ở cửa hàng
     - bên shop đang có chương trình khuyến mãi nào vậy ạ
     - bên em có đang khuyến mãi gì không?
     - Hãy cho tôi biết thông tin về các chương trình khuyến mãi tại cửa hàng
@@ -820,3 +825,90 @@ nlu:
     - Tôi muốn mua laptop [Macbook Pro 16 M1 Max](laptop_name)
     - Laptop [Google Pixelbook Go](laptop_name) có pin sạc nhanh không?
     - Laptop [Huawei MateBook X Pro](laptop_name) có màu sắc độc đáo không?
+
+- intent: find_with_price
+  examples: |
+    - Laptop nào có giá dưới [10tr]{"entity":"price_under","value":"10"}?
+    - Có laptop nào giá dưới [8tr]{"entity":"price_under","value":"8"} không?
+    - Cho tôi biết những mẫu laptop dưới [15tr]{"entity":"price_under","value":"15"}.
+    - Tìm laptop giá dưới [12tr]{"entity":"price_under","value":"12"}.
+    - Có laptop nào rẻ hơn [7tr]{"entity":"price_under","value":"7"} không?
+    - Laptop nào có giá dưới [5tr]{"entity":"price_under","value":"5"}?
+    - Các laptop tốt giá dưới [9tr]{"entity":"price_under","value":"9"} là gì?
+    - Tìm mẫu laptop phổ thông dưới [11tr]{"entity":"price_under","value":"11"}.
+    - Có nên mua laptop giá rẻ dưới [6tr]{"entity":"price_under","value":"6"} không?
+    - Laptop nào phù hợp với ngân sách [8tr]{"entity":"price_under","value":"8"}?
+    - Các model laptop dưới [14tr]{"entity":"price_under","value":"14"} nên chọn loại nào?
+    - Laptop nào dưới [7](price_under) triệu đồng đáng mua nhất?
+    - Tìm laptop chơi game giá dưới [13](price_under) triệu đồng.
+    - Có laptop nào dưới [6](price_under) triệu đồng chạy tốt không?
+    - Đánh giá các laptop giá rẻ dưới [10](price_under) triệu đồng.
+    - Tìm laptop cho sinh viên dưới [9](price_under) triệu đồng.
+    - Laptop dưới [8](price_under) triệu đồng nên chọn loại nào?
+    - Các model laptop dưới [10](price_under) triệu đồng nên chọn loại nào?
+    - Laptop nào dưới [5](price_under) triệu đồng chất lượng tốt?
+    - Tìm laptop giá rẻ dưới [7](price_under) triệu đồng chơi game.
+    - Laptop nào dưới [13](price_under) triệu đồng chạy nhanh?
+    - Có nên mua laptop giá dưới [9](price_under) triệu đồng không?
+    - Tìm laptop dưới [11](price_under) triệu đồng có thời lượng pin tốt.
+    - Laptop nào giá dưới [8](price_under) triệu đồng phù hợp cho học sinh?
+    - Các mẫu laptop dưới [14](price_under) triệu đồng nên mua loại nào?
+    - Tìm laptop giá dưới [6](price_under) triệu đồng làm việc văn phòng.
+    - Có laptop nào dưới [10](price_under) triệu đồng có màn hình Full HD không?
+    - Laptop nào dưới [9](price_under) triệu đồng có cấu hình cao?
+    - Tìm laptop giá rẻ dưới [12](price_under) triệu đồng cho sinh viên.
+    - Laptop dưới [7](price_under) triệu đồng có nên mua không?
+    - Có nên mua laptop giá dưới [8](price_under) triệu đồng để làm việc?
+    - Tìm laptop giá dưới [13](price_under) triệu đồng cho thiết kế đồ họa.
+    - Tìm laptop giá dưới [8](price_under) triệu đồng chơi game mượt.
+    - Laptop nào dưới [12](price_under) triệu đồng có màn hình lớn?
+    - Tìm laptop giá rẻ dưới [10](price_under) triệu đồng cho sinh viên.
+    - Các mẫu laptop dưới [9](price_under) triệu đồng nên mua loại nào?
+    - Laptop nào dưới [8](price_under) triệu đồng có bàn phím tốt?
+    - Tìm laptop giá dưới [11](price_under) triệu đồng làm việc nhanh.
+    - Laptop dưới [7](price_under) triệu đồng có đáng mua không?
+    - Laptop nào dưới [15](price_under) triệu đồng có thiết kế mỏng nhẹ?
+    - Các mẫu laptop dưới [20](price_under) triệu đồng nên chọn loại nào?
+    - Tìm laptop giá dưới [17](price_under) triệu đồng cho công việc văn phòng.
+    - Laptop nào dưới [18](price_under) triệu đồng có màn hình chống chói tốt?
+    - Có laptop nào dưới [16](price_under) triệu đồng phục vụ cho việc xem phim không?
+    - Tìm laptop giá dưới [14](price_under) triệu đồng có ổ cứng SSD nhanh.
+    - Tìm laptop giá dưới [28](price_under) triệu đồng cho sinh viên năm nhất.
+    - Laptop dưới [27](price_under) triệu đồng có đáng mua không để làm việc văn phòng?
+    - Các mẫu laptop dưới [26](price_under) triệu đồng nên chọn loại nào để chơi game nhẹ?
+    - Tìm laptop giá dưới [25](price_under) triệu đồng có thể xử lý nhiều tác vụ?
+    - Laptop nào dưới [24](price_under) triệu đồng có thể chạy được các ứng dụng văn phòng?
+    - Có laptop nào dưới [23](price_under) triệu đồng phù hợp cho học sinh cấp 3 không?
+    - Tìm laptop giá dưới [22](price_under) triệu đồng cho việc học tập cơ bản.
+    - Laptop dưới [21](price_under) triệu đồng có đáng mua không để làm việc từ xa?
+    - Các mẫu laptop dưới [19](price_under) triệu đồng nên chọn loại nào để chơi game AAA?
+    - Tìm laptop giá dưới [16](price_under) triệu đồng cho công việc lập trình.
+    - Laptop nào dưới [14](price_under) triệu đồng có pin lâu?
+    - Có nên mua laptop giá dưới [20](price_under) triệu đồng để làm việc văn phòng?
+    - Tìm laptop giá dưới [18](price_under) triệu đồng có màn hình lớn cho giải trí.
+    - Laptop dưới [17](price_under) triệu đồng có đáng mua không để làm việc đồ họa?
+    - Các mẫu laptop dưới [16](price_under) triệu đồng nên chọn loại nào để học tập online?
+    - Tìm laptop giá dưới [15](price_under) triệu đồng cho công việc lập trình web.
+    - Laptop nào dưới [14](price_under) triệu đồng có thiết kế đẹp và nhẹ?
+    - Có nên mua laptop giá dưới [13](price_under) triệu đồng để làm việc dựng video?
+    - Tìm laptop giá dưới [12](price_under) triệu đồng có card đồ họa tốt để chơi game?
+    - Laptop dưới [11](price_under) triệu đồng có đáng mua không để xem phim?
+    - Các mẫu laptop dưới [10](price_under) triệu đồng nên chọn loại nào để làm việc văn phòng?
+    - Tìm laptop giá dưới [9](price_under) triệu đồng cho sinh viên năm nhất.
+    - Laptop nào dưới [8](price_under) triệu đồng có thể sử dụng được lâu dài?
+    - Có nên mua laptop giá dưới [80](price_under) triệu đồng để làm việc từ xa?
+    - Tìm laptop giá dưới [70](price_under) triệu đồng cho công việc văn phòng.
+    - Laptop dưới [5](price_under) triệu đồng có đáng mua không để học tập?
+    - Các mẫu laptop dưới [4](price_under) triệu đồng nên chọn loại nào để sử dụng cho việc học online?
+    - Tìm laptop giá dưới [3](price_under) triệu đồng cho công việc văn phòng cơ bản.
+    - Laptop nào dưới [60](price_under) triệu đồng có thể sử dụng được cho trẻ em?
+    - Có laptop nào dưới [50](price_under) triệu đồng phù hợp cho việc học tập cơ bản?
+    - Tìm laptop giá dưới [19](price_under) triệu đồng có thời lượng pin tốt để di chuyển?
+    - Laptop dưới [18](price_under) triệu đồng có đáng mua không để làm việc đồ họa?
+    - Các mẫu laptop dưới [17](price_under) triệu đồng nên chọn loại nào để chơi game AAA?
+    - Tìm laptop giá dưới [16](price_under) triệu đồng cho công việc lập trình web.
+    - Laptop nào dưới [15](price_under) triệu đồng có màn hình lớn cho giải trí?
+    - Có nên mua laptop giá dưới [14](price_under) triệu đồng để làm việc văn phòng?
+    - Tìm laptop giá dưới [13](price_under) triệu đồng có thiết kế đẹp và nhẹ để mang đi làm?
+    - Laptop dưới [12](price_under) triệu đồng có đáng mua không để làm việc từ xa?
+    - Các mẫu laptop dưới [11](price_under) triệu đồng nên chọn loại nào để học tập online?

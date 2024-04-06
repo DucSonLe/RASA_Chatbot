@@ -228,3 +228,20 @@ nlu:
     - Mua laptop [Macbook Pro 14](laptop_name)
     - Laptop [Xiaomi Mi Notebook Pro](laptop_name) có card đồ họa NVIDIA không?
     - Cung cấp thông tin về laptop [Asus Vivobook 14](laptop_name)
+- intent: find_with_price
+  examples: |
+    - Các laptop giá dưới [12](price_under) triệu đồng có đáng mua không?
+    - Laptop nào dưới [7](price_under) triệu đồng có card đồ họa tốt?
+    - Tìm laptop làm văn phòng giá dưới [9](price_under) triệu đồng.
+    - Laptop dưới [6](price_under) triệu đồng có đáng mua không?
+    - Đánh giá các laptop giá dưới [8](price_under) triệu đồng.
+    - Laptop nào dưới [11](price_under) triệu đồng có thể chơi game tốt?
+    - Các mẫu laptop dưới [10](price_under) triệu đồng nên mua loại nào?
+    - Tìm laptop giá dưới [9](price_under) triệu đồng làm việc văn phòng.
+    - Laptop dưới [6](price_under) triệu đồng nên chọn loại nào?
+    - Có nên mua laptop giá dưới [7](price_under) triệu đồng để làm việc từ xa?
+    - Laptop dưới [13](price_under) triệu đồng có thể làm việc dựng video không?
+    - Các mẫu laptop dưới [12](price_under) triệu đồng nên mua loại nào để học tập online?
+    - Tìm laptop giá dưới [11](price_under) triệu đồng cho thiết kế đồ họa.
+    - Laptop nào dưới [10](price_under) triệu đồng có cấu hình mạnh mẽ nhất?
+    - Có nên mua laptop giá dưới [9](price_under) triệu đồng để làm việc từ xa?        

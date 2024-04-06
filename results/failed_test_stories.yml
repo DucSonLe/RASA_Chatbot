@@ -1,0 +1,6 @@
+version: "3.1"
+stories:
+- story: Hỏi Brand 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: brands_info  # predicted: laptop_of_brand: Các hãng laptop?
+  - action: action_get_brands_info

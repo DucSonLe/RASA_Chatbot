@@ -12,7 +12,8 @@ stories:
 - story: Hỏi tên
   steps:
   - user: |
-      [Em]{"entity": "customer_gender"} là [Lê Phương Trang]{"entity": "customer_name"}
+      [Em]{"entity": "customer_gender"} là [Phương Trang]{"entity": "customer_name"}
+    intent: give_name
   - action: action_save_cust_info
   - action: utter_greet_with_name
 
@@ -20,6 +21,7 @@ stories:
   steps:
   - user: |
       [Anh]{"entity": "customer_gender"} là [Phạm Ngọc Duy]{"entity": "customer_name"}
+    intent: give_name
   - action: action_save_cust_info
   - action: utter_greet_with_name
 
@@ -27,52 +29,117 @@ stories:
   steps:
   - user: |
       Các hãng laptop nào có sẵn tại cửa hàng này?
+    intent: brands_info
   - action: action_get_brands_info
 
 - story: Hỏi Brand 2
   steps:
   - user: |
-      Cửa hàng có những hãng laptop nào?
+      Các hãng laptop?
+    intent: brands_info
   - action: action_get_brands_info
-  - user: |
-      Cho tôi xem các Laptop của hãng [ASUS]{"entity": "brand_name"}
-  - action: action_get_laptop_of_brand
-  - user: |
-      [Asus VivoBook S 14](laptop_name) giá bán như thế nào?
-  - action: action_get_laptop_price
 
 - story: Hỏi Brand 3
   steps:
   - user: |
-      Cửa hàng cung cấp các hãng máy tính từ những thương hiệu nào?
-  - action: action_get_brands_info
-  - user: |
-      Cho tôi xem danh sách laptop của hãng [DELL]{"entity": "brand_name"}
-  - action: action_get_laptop_of_brand
-  - user: |
-      Cho tôi biết Laptop [Dell Vostro 15 V3530](laptop_name) bao nhiêu tiền?
-  - action: action_get_laptop_price
-
-- story: Hỏi Brand 4
-  steps:
-  - user: |
       Các hãng laptop nào được bán ở đây?
+    intent: brands_info
   - action: action_get_brands_info
-  - user: |
-      Danh sách laptop của hãng [ASUS]{"entity": "brand_name"}
-  - action: action_get_laptop_of_brand
-  - user: |
-      Báo giá Laptop [Asus Zenbook 14 OLED](laptop_name)
-  - action: action_get_laptop_price
 
-- story: Hỏi Brand 5
+- story: Hỏi về thông tin laptop
   steps:
   - user: |
-      Các hãng laptop?
-  - action: action_get_brands_info
+      Tôi quan tâm về Laptop [Dell Vostro 15 V3530]{"entity": "laptop_name"}
+    intent: laptop_info
+  - action: action_get_laptop_name
+
+- story: Hỏi về thông tin laptop 2
+  steps:
   - user: |
-      Các Laptop của hãng [MSI]]{"entity": "brand_name"}
-  - action: action_get_laptop_of_brand
+      Thông tin Laptop [Asus Zenbook 14 OLED]{"entity": "laptop_name"}
+    intent: laptop_info
+  - action: action_get_laptop_name
+
+- story: Hỏi về thông tin laptop 3
+  steps:
   - user: |
-      Có thể cho biết giá của Laptop [MSI Bravo 15 B7ED](laptop_name) không?
-  - action: action_get_laptop_price
+      Ở đây có bán Laptop [Asus Vivobook 15]{"entity": "laptop_name"} không?
+    intent: laptop_info
+  - action: action_get_laptop_name
+
+- story: Hỏi về thông tin laptop 4
+  steps:
+  - user: |
+      Mua laptop [Macbook Pro 14]{"entity": "laptop_name"}
+    intent: laptop_info
+  - action: action_get_laptop_name
+
+- story: Hỏi về bảo hành
+  steps:
+  - user: |
+      cửa hàng có chính sách bảo hành không?
+    intent: warranty_police
+  - action: action_get_warranty_police
+
+- story: Hỏi về bảo hành 2
+  steps:
+  - user: |
+      Tôi muốn biết về chính sách bảo hành
+    intent: warranty_police
+  - action: action_get_warranty_police
+
+- story: tìm laptop với giá tiền
+  steps:
+  - user: |
+      có bán laptop giá dưới [10]{"entity": "price_under"} triệu không?
+    intent: find_with_price
+  - action: action_get_laptop_with_price
+
+- story: tìm laptop với giá tiền 2
+  steps:
+  - user: |
+      tôi đang quan tâm laptop giá dưới [21]{"entity": "price_under"} triệu
+    intent: find_with_price
+  - action: action_get_laptop_with_price
+
+- story: tìm laptop với giá tiền 3
+  steps:
+  - user: |
+      tôi muốn tìm laptop giá dưới [30]{"entity": "price_under"} triệu
+    intent: find_with_price
+  - action: action_get_laptop_with_price
+
+- story: tìm laptop với giá tiền 4
+  steps:
+  - user: |
+      laptop giá dưới [30]{"entity": "price_under"} triệu
+    intent: find_with_price
+  - action: action_get_laptop_with_price
+
+- story: hỏi về ưu đãi
+  steps:
+  - user: |
+      cửa hàng có đang ưu đãi gì không?
+    intent: promotion
+  - action: utter_give_promotion
+
+- story: hỏi về ưu đãi 2
+  steps:
+  - user: |
+      khuyến mãi đang có ở cửa hàng
+    intent: promotion
+  - action: utter_give_promotion
+
+- story: hỏi về giao hàng
+  steps:
+  - user: |
+      có giao hàng tận nhà không vậy?
+    intent: delivery
+  - action: utter_delivery
+
+- story: hỏi về giao hàng 2
+  steps:
+  - user: |
+      phương thức giao hàng
+    intent: delivery
+  - action: utter_delivery

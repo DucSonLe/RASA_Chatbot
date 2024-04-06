@@ -1,0 +1,134 @@
+[
+  {
+    "text": "Mua laptop Macbook Pro 14",
+    "entities": [
+      {
+        "start": 11,
+        "end": 25,
+        "value": "Macbook Pro 14",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "có bán laptop giá dưới 10 triệu không?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 29,
+        "value": "10",
+        "entity": "price_under"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tôi đang quan tâm laptop giá dưới 21 triệu",
+    "entities": [
+      {
+        "start": 36,
+        "end": 38,
+        "value": "21",
+        "entity": "price_under"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tôi muốn tìm laptop giá dưới 30 triệu",
+    "entities": [
+      {
+        "start": 33,
+        "end": 35,
+        "value": "30",
+        "entity": "price_under"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "laptop giá dưới 30 triệu",
+    "entities": [
+      {
+        "start": 18,
+        "end": 20,
+        "value": "30",
+        "entity": "price_under"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Em là Phương Trang",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "Em",
+        "entity": "customer_gender"
+      },
+      {
+        "start": 6,
+        "end": 18,
+        "value": "Phương Trang",
+        "entity": "customer_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Anh là Phạm Ngọc Duy",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "Anh",
+        "entity": "customer_gender"
+      },
+      {
+        "start": 7,
+        "end": 20,
+        "value": "Phạm Ngọc Duy",
+        "entity": "customer_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Tôi quan tâm về Laptop Dell Vostro 15 V3530",
+    "entities": [
+      {
+        "start": 24,
+        "end": 44,
+        "value": "Dell Vostro 15 V3530",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Thông tin Laptop Asus Zenbook 14 OLED",
+    "entities": [
+      {
+        "start": 17,
+        "end": 37,
+        "value": "Asus Zenbook 14 OLED",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Ở đây có bán Laptop Asus Vivobook 15 không?",
+    "entities": [
+      {
+        "start": 20,
+        "end": 36,
+        "value": "Asus Vivobook 15",
+        "entity": "laptop_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
